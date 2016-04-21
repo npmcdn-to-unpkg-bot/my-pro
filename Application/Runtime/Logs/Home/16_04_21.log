@@ -1,0 +1,27 @@
+[ 2016-04-21T22:34:44+08:00 ] 127.0.0.1 /MyFramework/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003963s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004187s ]
+ERR: 参数错误或者未定义:param
+
+[ 2016-04-21T22:35:11+08:00 ] 127.0.0.1 /MyFramework/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+ERR: 参数错误或者未定义:param
+
+[ 2016-04-21T22:36:01+08:00 ] 127.0.0.1 /MyFramework/index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004043s ]
+ERR: 参数错误或者未定义:param
+
