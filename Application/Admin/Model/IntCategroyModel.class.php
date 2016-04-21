@@ -13,7 +13,7 @@
 */
 namespace Admin\Model;
 
-use s
+use Think\Model;
 class IntCategroyModel extends Model{
 	
 }
