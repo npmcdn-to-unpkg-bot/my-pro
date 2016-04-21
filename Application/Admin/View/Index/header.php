@@ -61,7 +61,7 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
       </ul>
     </li>
     <li class=""><a title="" href="#setting"  data-toggle="modal"><i class="fa fa-cog"></i> <span class="text">密码设置</span></a></li>
-    <li class=""><a title="" href="__ROOT__/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li>
+    <li class=""><a title="" href="__ROOT__/Admin/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li>
   </ul>
 </div>
 <!--close-top-Header-menu-->

@@ -3,4 +3,5 @@
 	<buildpathentry external="true" kind="lib" path="/Web/MyFramework/ThinkPHP"/>
 	<buildpathentry kind="src" path=""/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry external="true" kind="lib" path="/Web/MyFramework/PhpConsole"/>
 </buildpath>

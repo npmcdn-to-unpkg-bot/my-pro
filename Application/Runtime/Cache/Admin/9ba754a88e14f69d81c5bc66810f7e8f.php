@@ -7,21 +7,20 @@
 <meta name="Designer" content="PremiumPixels.com">
 <meta name="Author" content="$hekh@r d-Ziner, CSSJUNTION.com">
 
-<link rel="stylesheet" type="text/css" href="/git/my-pro/Public/StyleResources/login/reset.css" />
-<link rel="stylesheet" type="text/css" href="/git/my-pro/Public/StyleResources/login/structure.css" />
+<link rel="stylesheet" type="text/css" href="/MyFramework/Public/StyleResources/login/reset.css" />
+<link rel="stylesheet" type="text/css" href="/MyFramework/Public/StyleResources/login/structure.css" />
 </head>
 
 <body>
-<form class="box login" method="post" action="/git/my-pro/Index/adminValidate">
+<form class="box login" method="post" action="/MyFramework/Admin/Index/adminValidate">
 	<fieldset class="boxBody">
 	  <label>登录帐号</label>
 	  <input type="text" tabindex="1" placeholder="管理员帐号" name="account" required>
 	  <label><a href="#" class="rLink" tabindex="5">忘记密码?</a>密码</label>
 	  <input type="password" tabindex="2" name="password" required>
-	  <?php echo $test;?>
 	</fieldset>
 	<footer>
-	  <label><input type="checkbox" tabindex="3">保持登录</label>
+	  <label><input type="checkbox" tabindex="3">保持登录<?php echo ($test); ?></label>
 	  <input type="submit" class="btnLogin" value="Login" tabindex="4">
 	</footer>
 </form>
