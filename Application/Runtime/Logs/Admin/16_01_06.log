@@ -1,0 +1,43 @@
+[ 2016-01-06T14:24:42+08:00 ] ::1 /MyPro/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000232s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004125s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028749s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028848s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002879s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002950s ]
+
+[ 2016-01-06T14:24:45+08:00 ] ::1 /MyPro/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_group` [ RunTime:0.0397s ]
+SQL: SELECT `role_id` FROM `yybg_admin_group` WHERE ( admin_id='' )  [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_menu` [ RunTime:0.0089s ]
+NOTIC: [8] Undefined offset: 0 /Web/MyPro/Application/Admin/Common/CommonMenu.class.php 第 42 行.
+SQL: select * from yybg_admin_menu menu where menu.pid is null and menu.id in (select res_id from yybg_auth auth where auth.role_id = '' and auth_res_type = '00A')  order by PID ASC , menu.sort desc [ RunTime:0.0081s ]
+SQL: SELECT * FROM `yybg_admin_menu` WHERE ( id='' ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012111s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002541s ]
+

@@ -1,0 +1,95 @@
+[ 2016-04-21T09:23:35+08:00 ] 127.0.0.1 /git/my-pro/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003898s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004121s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025397s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025519s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001692s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001785s ]
+
+[ 2016-04-21T09:23:36+08:00 ] 127.0.0.1 /git/my-pro/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000301s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_group` [ RunTime:0.0038s ]
+SQL: SELECT `role_id` FROM `yybg_admin_group` WHERE ( admin_id='' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_menu` [ RunTime:0.0049s ]
+NOTIC: [8] Undefined offset: 0 /Web/git/my-pro/Application/Admin/Common/CommonMenu.class.php 第 42 行.
+SQL: select * from yybg_admin_menu menu where menu.pid is null and menu.id in (select res_id from yybg_auth auth where auth.role_id = '' and auth_res_type = '00A')  order by PID ASC , menu.sort desc [ RunTime:0.0006s ]
+SQL: SELECT * FROM `yybg_admin_menu` WHERE ( id='' ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006271s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006326s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000106s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000137s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002107s ]
+
+[ 2016-04-21T09:23:38+08:00 ] 127.0.0.1 /git/my-pro/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_group` [ RunTime:0.0041s ]
+SQL: SELECT `role_id` FROM `yybg_admin_group` WHERE ( admin_id='' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_menu` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 0 /Web/git/my-pro/Application/Admin/Common/CommonMenu.class.php 第 42 行.
+SQL: select * from yybg_admin_menu menu where menu.pid is null and menu.id in (select res_id from yybg_auth auth where auth.role_id = '' and auth_res_type = '00A')  order by PID ASC , menu.sort desc [ RunTime:0.0008s ]
+SQL: SELECT * FROM `yybg_admin_menu` WHERE ( id='' ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007585s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000157s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000582s ]
+
+[ 2016-04-21T09:23:43+08:00 ] 127.0.0.1 /git/my-pro/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_group` [ RunTime:0.0031s ]
+SQL: SELECT `role_id` FROM `yybg_admin_group` WHERE ( admin_id='' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_menu` [ RunTime:0.0066s ]
+NOTIC: [8] Undefined offset: 0 /Web/git/my-pro/Application/Admin/Common/CommonMenu.class.php 第 42 行.
+SQL: select * from yybg_admin_menu menu where menu.pid is null and menu.id in (select res_id from yybg_auth auth where auth.role_id = '' and auth_res_type = '00A')  order by PID ASC , menu.sort desc [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yybg_admin_menu` WHERE ( id='' ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010107s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010165s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000439s ]
+

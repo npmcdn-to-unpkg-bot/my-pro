@@ -1,0 +1,149 @@
+[ 2015-12-28T15:59:40+08:00 ] 127.0.0.1 /MyPro/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000088s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004342s ]
+ERR: 无法加载控制器:Home
+
+[ 2015-12-28T15:59:46+08:00 ] 127.0.0.1 /MyPro/index.php/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+ERR: 无法加载控制器:Home
+
+[ 2015-12-28T15:59:54+08:00 ] 127.0.0.1 /MyPro/index.php/home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+ERR: 无法加载控制器:Home
+
+[ 2015-12-28T15:59:58+08:00 ] 127.0.0.1 /MyPro/home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+ERR: 无法加载控制器:Home
+
+[ 2015-12-28T16:00:09+08:00 ] 127.0.0.1 /MyPro/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+ERR: 无法加载控制器:Admin
+
+[ 2015-12-28T16:00:12+08:00 ] 127.0.0.1 /MyPro/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000949s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001042s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037435s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037527s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000831s ]
+
+[ 2015-12-28T16:00:14+08:00 ] 127.0.0.1 /MyPro/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_group` [ RunTime:0.0208s ]
+SQL: SELECT `role_id` FROM `yybg_admin_group` WHERE ( admin_id='' )  [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_menu` [ RunTime:0.0241s ]
+NOTIC: [8] Undefined offset: 0 /Web/MyPro/Application/Admin/Common/CommonMenu.class.php 第 42 行.
+SQL: select * from yybg_admin_menu menu where menu.pid is null and menu.id in (select res_id from yybg_auth auth where auth.role_id = '' and auth_res_type = '00A')  order by PID ASC , menu.sort desc [ RunTime:0.0091s ]
+SQL: SELECT * FROM `yybg_admin_menu` WHERE ( id='' ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011873s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011970s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000837s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000898s ]
+
+[ 2015-12-28T16:00:22+08:00 ] 127.0.0.1 /MyPro/admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+ERR: 无法加载控制器:Admin
+
+[ 2015-12-28T16:00:26+08:00 ] 127.0.0.1 /MyPro/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_group` [ RunTime:0.0068s ]
+SQL: SELECT `role_id` FROM `yybg_admin_group` WHERE ( admin_id='' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yybg_admin_menu` [ RunTime:0.0068s ]
+NOTIC: [8] Undefined offset: 0 /Web/MyPro/Application/Admin/Common/CommonMenu.class.php 第 42 行.
+SQL: select * from yybg_admin_menu menu where menu.pid is null and menu.id in (select res_id from yybg_auth auth where auth.role_id = '' and auth_res_type = '00A')  order by PID ASC , menu.sort desc [ RunTime:0.0007s ]
+SQL: SELECT * FROM `yybg_admin_menu` WHERE ( id='' ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018629s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018693s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001689s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001742s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000946s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000997s ]
+
+[ 2015-12-28T16:00:46+08:00 ] 127.0.0.1 /MyPro/admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+ERR: 无法加载控制器:Login
+
+[ 2015-12-28T16:00:52+08:00 ] 127.0.0.1 /MyPro/admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018690s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018767s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001975s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002046s ]
+
