@@ -134,7 +134,7 @@ class ResourcesController extends CommonController {
 			//拼接查询字符串
 			foreach(I('get.') as $key => $item)
 			{
-				if("m_id" == $key || 'p_id' == $key || "" == trim($item))
+				if("m_id" == $key || 'p_id' == $key || "" == trim($item) || "p" == $key)
 					continue;
 				else if("PID" == $key)
 					$where .= "and " . $key . " " . $item;
@@ -144,10 +144,10 @@ class ResourcesController extends CommonController {
 			
 			// 分页控制
 			$model = M ( "admin_menu" );
+			
 			$pageInfo ['Count'] = $model->where ( $where)->count ();
 			$page = new Page ( $pageInfo ['Count'], 10 );
 			$assignData ['pageData'] = $page->show ();
-			
 			$assignData ['list'] = $model->where ( $where )->order ( 'pid,sort desc' )->page ( I ( 'p' ), 10 )->select ();
 			$this->assign ( $assignData );
 			$this->display ();

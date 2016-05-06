@@ -24,13 +24,20 @@
 </switch>
 <load href="__STYLE_RES__/font-awesome-4.4.0/css/font-awesome.css" />
 <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'> -->
+<if condition="$EDIT">
+    <script type="text/javascript" charset="utf-8" src="__UEDIT__/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__UEDIT__/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="__UEDIT__/lang/zh-cn/zh-cn.js"></script>
+</if>
+
 <script type="text/javascript">
 var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
 </script>
 
 </head>
 <body>
-
 <!--Header-part-->
 <div id="header">
 
@@ -61,7 +68,7 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
       </ul>
     </li>
     <li class=""><a title="" href="#setting"  data-toggle="modal"><i class="fa fa-cog"></i> <span class="text">密码设置</span></a></li>
-    <li class=""><a title="" href="__ROOT__/Admin/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li>
+    <li class=""><a title="" href="__ROOT__/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li>
   </ul>
 </div>
 <!--close-top-Header-menu-->

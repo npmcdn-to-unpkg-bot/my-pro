@@ -15,14 +15,12 @@
 
 namespace Admin\Controller;
 
-require_once './PhpConsole/__autoload.php';
 use Think\Controller;
 use Common\Util\UUID;
 use Think\Exception;
 use Admin\Common\CommonController;
 use Admin\Common\CommonMenu;
 use Think\Model;
-use PhpConsole;
 /**
  * *用途：
  * *@作者：yaoyuan
@@ -40,9 +38,6 @@ class IndexController extends CommonController {
 		$this->display ();
 	}
 	public function login() {
-		$handler = PhpConsole\Handler::getInstance();
-		$handler->start();
-		$handler->debug('Hello,world' , 'My first Phpconsole');
 		$this->display ();
 	}
 

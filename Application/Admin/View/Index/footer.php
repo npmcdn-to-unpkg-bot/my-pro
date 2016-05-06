@@ -4,7 +4,7 @@
 <!--Footer-part-->
 
 <div class="row-fluid">
-	<div id="footer" class="span12"><?php echo $UUID;?></div>
+	<div id="footer" class="span12"></div>
  </div>
 
 <!--end-Footer-part-->
@@ -46,7 +46,6 @@
 		<script src="__JS_RES__/iconSelect.js"></script> 
  	</case>
  </switch>
- 
  <if condition="$PAGE_FROM eq Index">
 	 <script type="text/javascript">
 	  // This function is called from the pop-up menus to transfer to
@@ -74,6 +73,5 @@
 	
 	</script>
  </if>
-
 </body>
 </html>

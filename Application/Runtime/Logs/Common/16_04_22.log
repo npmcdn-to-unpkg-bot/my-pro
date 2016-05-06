@@ -1,0 +1,48 @@
+[ 2016-04-22T22:53:21+08:00 ] 127.0.0.1 /MyFramework/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+ERR: 无法加载模块:Index
+
+[ 2016-04-22T22:53:50+08:00 ] 127.0.0.1 /MyFramework/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003943s ]
+ERR: 无法加载模块:Index
+
+[ 2016-04-22T22:53:51+08:00 ] 127.0.0.1 /MyFramework/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+ERR: 无法加载模块:Index
+
+[ 2016-04-22T22:53:54+08:00 ] 127.0.0.1 /MyFramework/index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+ERR: 无法加载模块:Index
+
+[ 2016-04-22T22:59:04+08:00 ] 127.0.0.1 /MyFramework/Public/JsResources/Matrix/jquery.gritter.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+ERR: 无法加载模块:Public
+
+[ 2016-04-22T22:59:07+08:00 ] 127.0.0.1 /MyFramework/resources/menulist/m_id/a1542e3f-9343-c146-dd1d-1d0ed483b00a/p_id/64c21aae-045b-72fb-cfd0-e0f28ffffcc2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+ERR: 无法加载模块:Resources
+
+[ 2016-04-22T22:59:30+08:00 ] 127.0.0.1 /MyFramework/Public/JsResources/Matrix/jquery.gritter.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+ERR: 无法加载模块:Public
+
+[ 2016-04-22T23:01:03+08:00 ] 127.0.0.1 /MyFramework/resources/menumodify/m_id//p_id//id/64c21aae-045b-72fb-cfd0-e0f28ffffcc2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+ERR: 无法加载模块:Resources
+

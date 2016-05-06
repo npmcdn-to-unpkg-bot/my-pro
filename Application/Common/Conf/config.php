@@ -16,6 +16,7 @@ return array(
 		'TMPL_TEMPLATE_SUFFIX'=>'.php',
 		'URL_MODEL' => URL_REWRITE,
 		'URL_HTML_SUFFIX'=>'html',
+// 		'TAGLIB_PRE_LOAD' => 'Util',
 		'DEFAULT_PSW' => '123456',
 		//'配置项'=>'配置值' 配置模板替换
 		'TMPL_PARSE_STRING'  =>array(
@@ -23,5 +24,9 @@ return array(
 				'__STYLE_RES__' => __ROOT__.'/Public' .'/StyleResources', // 配置Css样式表资源位置
 				'__IMG_RES__' => __ROOT__.'/Public' .'/ImgResources', // 配置所用图片资源位置
 				'__FILE_RES__' => __ROOT__.'/Public' .'/FileResources', // 配置所用图片资源位置
+				'__UEDIT__' => __ROOT__.'/Public' .'/uedit', // 配置所用图片资源位置
 		),
+		//配置默认模块
+		'MODULE_ALLOW_LIST' => array ('Admin' , 'Home'),
+		'DEFAULT_MODULE' => 'Admin'
 );

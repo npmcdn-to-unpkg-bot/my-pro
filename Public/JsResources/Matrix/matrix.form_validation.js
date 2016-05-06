@@ -65,7 +65,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	//管理员管理表单验证
+	//角色管理表单验证
 	$("#roles_validate").validate({
 		rules:{
 			ROLE_NAME:{
@@ -85,6 +85,102 @@ $(document).ready(function(){
 			$(element).parents('.control-group').addClass('success');
 		}
 	});
+	
+	//接口分类管理表单验证
+	$("#category_validate").validate({
+		rules:{
+			category_name:{
+				required:true
+			},
+			sort:{
+				required:true,
+				digits:true
+			}
+		},
+		errorClass: "help-inline",
+		errorElement: "span",
+		highlight:function(element, errorClass, validClass) {
+			$(element).parents('.control-group').removeClass('success');
+			$(element).parents('.control-group').addClass('error');
+		},
+		unhighlight: function(element, errorClass, validClass) {
+			$(element).parents('.control-group').removeClass('error');
+			$(element).parents('.control-group').addClass('success');
+		}
+	});
+	
+	
+	//接口口信息表单验证
+	$("#interface_validate").validate({
+		rules:{
+			name:{
+				required:true,
+				maxlength:64,
+			},
+			category:{
+				required:true,
+			},
+			url:{
+				url:true,
+				maxlength:256,
+			},
+			testUrl:{
+				url:true,
+				maxlength:256,
+			},
+			author:{
+				required:true,
+				maxlength:20,
+			},
+			discription:{
+				required:true,
+				maxlength:200,
+			},
+			sort:{
+				required:true,
+				digits:true
+			}
+		},
+		errorClass: "help-inline",
+		errorElement: "span",
+		highlight:function(element, errorClass, validClass) {
+			$(element).parents('.control-group').removeClass('success');
+			$(element).parents('.control-group').addClass('error');
+		},
+		unhighlight: function(element, errorClass, validClass) {
+			$(element).parents('.control-group').removeClass('error');
+			$(element).parents('.control-group').addClass('success');
+		}
+	});
+	
+	//接口口信息表单验证
+	$("#paramIn_validate").validate({
+		rules:{
+			paramInName:{
+				required:true,
+				maxlength:64,
+			},
+			discription:{
+				required:true,
+				maxlength:512,
+			},
+			paramInSort:{
+				required:true,
+				digits:true
+			}
+		},
+		errorClass: "help-inline",
+		errorElement: "span",
+		highlight:function(element, errorClass, validClass) {
+			$(element).parents('.control-group').removeClass('success');
+			$(element).parents('.control-group').addClass('error');
+		},
+		unhighlight: function(element, errorClass, validClass) {
+			$(element).parents('.control-group').removeClass('error');
+			$(element).parents('.control-group').addClass('success');
+		}
+	});
+	
 });
 
 /*
@@ -159,3 +255,4 @@ jQuery.validator.addMethod(
     }, 
     $.validator.format("{2}已经存在")
 );
+

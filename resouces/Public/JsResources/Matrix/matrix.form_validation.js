@@ -65,7 +65,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	//管理员管理表单验证
+	//角色管理表单验证
 	$("#roles_validate").validate({
 		rules:{
 			ROLE_NAME:{
