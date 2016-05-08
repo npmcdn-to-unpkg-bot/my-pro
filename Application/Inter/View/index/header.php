@@ -32,7 +32,7 @@
     <script type="text/javascript" charset="utf-8" src="__UEDIT__/lang/zh-cn/zh-cn.js"></script>
 </if>
 <!-- 代码着色器初始化 -->
-<if condition="$CODE">
+<if condition="$CODE eq true">
 	<load href="__STYLE_RES__/code/shCoreDefault.css" />
 	<script type="text/javascript" src="__JS_RES__/code/shCore.js"></script>
 	<script type="text/javascript" src="__JS_RES__/code/shBrushXml.js"></script>
@@ -91,19 +91,19 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
 <div id="sidebar"><a href="#" class="visible-phone"><i class="fa fa-home"></i> Dashboard</a>
 	<ul>
 	
-	<li <?php if(I('p_id') == "" || I('p_id') == null){?>class="active"<?php }?>><a href="{:U('Inter/Index/document')}"><i class="fa fa-rocket"></i> <span>全部</span></a> </li>
+	<li <?php if(I('p_id') == "" || I('p_id') == null){?>class="active"<?php }?>><a href="{:U('Inter/Index/Index')}"><i class="fa fa-rocket"></i> <span>全部</span></a> </li>
 
 	<volist name="icData" id="icItem">
 		<if condition="count($icItem['children']) gt 0">
-			<li class="submenu <?php if(I('p_id') == $icItem['id']){?> open<?php }?>"> <a href="#"><i class="fa fa-retweet"></i> <span>{$icItem.name}</span> <span class="label label-important"><?php echo count($icItem['children']);?></span></a>
+			<li class="submenu <?php if(I('p_id') == $icItem['id']){?> open<?php }?>"> <a href="{:U('Inter/Index/Index' , array('m_id' => $icItem['id'] , 'p_id' => $icItem['id']))}"><i class="fa fa-retweet"></i> <span>{$icItem.name}</span> <span class="label label-important"><?php echo count($icItem['children']);?></span></a>
 			<ul>
 				<volist name="icItem.children" id="icChiItem">
-					<li <?php if(I('m_id') == $icChiItem['id']){?>class="active"<?php }?>><span><a href="{:U('Index/InterList' , array('m_id' => I('m_id') , 'p_id' => I('p_id')))}"><i class="fa fa-retweet" style="margin-right: 10px;"></i>{$icChiItem.name}</a></span></li>
+					<li <?php if(I('m_id') == $icChiItem['id']){?>class="active"<?php }?>><span><a href="{:U('Inter/Index/Index' , array('m_id' => $icChiItem['id'] , 'p_id' => $icItem['id']))}"><i class="fa fa-retweet" style="margin-right: 10px;"></i>{$icChiItem.name}</a></span></li>
 				</volist>
 			</ul>
 			</li>
 			<else/>
-			<li><a href="{:U('Index/InterList' , array('m_id' => I('m_id') , 'p_id' => I('p_id')))}"><i class="fa fa-retweet"></i> <span>{$icItem.name}</span></a> </li>
+			<li><a href="{:U('Inter/Index/Index' , array('m_id' => $icItem['id'] , 'p_id' => $icItem['id']))}"><i class="fa fa-retweet"></i> <span>{$icItem.name}</span></a> </li>
 		</if>
 	</volist>
 	</ul>
@@ -114,8 +114,6 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
 <div id="content">
 <!--breadcrumbs-->
   <div id="content-header">
-  
-  <!-- 
     <div id="breadcrumb"> 
 	    <a href="{:U('Inter/Index/document')}" title="Go to Home" class="tip-bottom"><i class="fa-home"></i> 首页</a>
 	    <if condition="$BreadCrumb[0] neq null">
@@ -126,7 +124,7 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
 	    </if>
 	    
     </div>
-     -->
+     <h1>{$intData.name}</h1>
   </div>
 <!--End-breadcrumbs-->
 <!-- 高级搜索弹出框 begin -->

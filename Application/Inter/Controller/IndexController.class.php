@@ -37,6 +37,16 @@ class IndexController extends CommonController{
 	*/
 	private $intModel;
 	
+	/*
+	*接口参数模型
+	*/
+	private $paramMode;
+	
+	/*
+	*接口返回CODE模型
+	*/
+	private $codeMode;
+	
 	/**
 	* 用途:构造函数
 	* @时间: 2016年5月7日 上午11:25:31
@@ -51,6 +61,10 @@ class IndexController extends CommonController{
 			$this->icModel = new \Admin\Model\IntCategoryModel();
 			//实例化接口模型
 			$this->intModel = new \Admin\Model\InterModel();
+			//实例化接口参数模型
+			$this->paramMode = new \Admin\Model\ParamsModel();
+			//实例化接口返回code模型
+			$this->codeMode = new \Admin\Model\ErrorCodeModel();
 		}
 		catch(Exception $e){
 			$this -> debug($e -> getMessage(), 'Exception');
@@ -64,25 +78,27 @@ class IndexController extends CommonController{
 	* @参数:
 	* @返回:
 	*/
-	public function document(){
+	public function index(){
 		try{
 			$assignData['PAGE_FROM'] = 'Index';
 			
-			$where = "(STATE = '00A')";
+			$where = "STATE = '00A'";
 			//拼接查询字符串
 			foreach(I('get.') as $key => $item)
 			{
+				if("m_id" == $key)
+					$where .= " and category_id = '".$item."' ";
 				if("m_id" == $key || 'p_id' == $key || "" == trim($item) || "p" == $key)
 					continue;
 				else
 					$where .= " and " . $key . " like '%".$item."%'";
 			}
-				
+			
 			$pageInfo ['Count'] = $this -> intModel ->where ( $where)->count ();
+			$this->debug($this->intModel->getLastSql(), 'sql');
 			$page = new Page ( $pageInfo ['Count'], 10 );
 			$assignData ['pageData'] = $page->show ();
 			$assignData ['list'] = $this -> intModel ->where ( $where )->order ( 'update_time desc' )->page ( I ( 'p' ), 10 )->select ();
-			$this->debug($assignData, 'data');
 			$this->assign($assignData);
 			$this->display();
 		}
@@ -100,8 +116,10 @@ class IndexController extends CommonController{
 	*/
 	public function interDetails(){
 		try{
-			$assignData['CODE'] = true;
+			
 			$assignData['intData'] = $this->intModel->getInterfaceById(I('id'));
+			$assignData['params'] = $this->paramMode->getParamsByInterId(I('id'));
+			$assignData['codes'] = $this->codeMode->getErrorCodeDatasByIntId(I('id'));
 			$this->assign($assignData);
 			$this->display();
 		}

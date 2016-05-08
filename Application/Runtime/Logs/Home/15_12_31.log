@@ -1,9 +1,0 @@
-[ 2015-12-31T09:51:46+08:00 ] 127.0.0.1 /MyPro/
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000457s ]
-INFO: [ app_init ] --END-- [ RunTime:0.017727s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003987s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.004086s ]
-ERR: 参数错误或者未定义:param
-

@@ -3,7 +3,9 @@
 	<div class="widget-title bg_lo">
 		<span class="icon"> <i class=" fa fa-chevron-down"></i>
 		</span>
-		<h5>所有接口</h5>
+		<h5>
+		<if condition="I('m_id') eq ''">所有接口<else/>{$list[0]['category_name']}</if>
+		</h5>
 	</div>
 	<div class="widget-content  nopadding">
 		<volist name='list' id='item'>

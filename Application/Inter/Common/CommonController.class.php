@@ -28,7 +28,10 @@ class CommonController extends Controller {
 	public function _initialize() {
 		//获取接口分类
 		$icModel = new \Admin\Model\IntCategoryModel();
-		$this->assign('icData' ,  $icModel->getCategoryWithRelationship());
+		
+		$assignData['icData'] = $icModel->getCategoryWithRelationship();
+		
+		$this->assign($assignData);
 		//设置PhpConsole调试句柄
 		if(C('Phpconsole')){
 			if(!PhpConsole\Handler::getInstance() ->isStarted()){
