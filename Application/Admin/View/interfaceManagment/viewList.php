@@ -6,7 +6,7 @@
 			<div class="widget-box">
 				<div class="widget-title" style="padding: 5px">
 					<div class="fl" style="margin-right: 10px;">
-						<input type="text" id="NAME" class="span11 searchItems" placeholder="分类名称" value="" />
+						<input type="text" id="NAME" class="span11 searchItems" placeholder="名称" value="" />
 					</div>
 					<button type="button" class="btn fa fa-search search_com">搜索</button>
 					<a href="#mySearch" data-toggle="modal"><button class="btn fa fa-filter">高级检索</button></a>
@@ -18,13 +18,14 @@
 						<thead>
 							<tr>
 								<th><input type="checkbox" id="title-checkbox" name="title-checkbox" /></th>
-								<th width="18%">接口名称</th>
-								<th width="8%">调用类型</th>
-								<th width="14%">接口分类</th>
-								<th width="30%">分类描述</th>
-								<th width="8%">接口排序</th>
-								<th width="12%">创建时间</th>
-								<th width="10%">操作</th>
+								<th width="15%">名称</th>
+								<th width="8%">类型</th>
+								<th width="10%">分类</th>
+								<th width="32%">描述</th>
+								<th width="10%">作者</th>
+								<th width="5%">排序</th>
+								<th width="12%">最近修改时间</th>
+								<th width="13%">操作</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -43,8 +44,9 @@
 									echo msubstr($vo['discription'],0,20,"utf-8",true);
 								?>
 								</td>
+								<td>{$vo.author}</td>
 								<td>{$vo.sort}</td>
-								<td>{$vo.create_time}</td>
+								<td>{$vo.update_time}</td>
 								<td>
 									<div class="btn-group">
 										<button data-toggle="dropdown" class="btn btn-mini dropdown-toggle ">
@@ -53,9 +55,11 @@
 										<ul class="dropdown-menu">
 											<li><a href="__ROOT__/{$Think.CONTROLLER_NAME}/viewModify/m_id/{:I('m_id')}/p_id/{:I('p_id')}/id/{$vo.id}" class="fa fa-edit"> 修改基本信息</a></li>
 											<li class="divider"></li>
-											<li><a href="__ROOT__/{$Think.CONTROLLER_NAME}/interParams/m_id/{:I('m_id')}/p_id/{:I('p_id')}/intId/{$vo.id}/type/paramIn" class="fa fa-indent"> 入参管理</a></li>
-											<li><a href="__ROOT__/{$Think.CONTROLLER_NAME}/interParams/m_id/{:I('m_id')}/p_id/{:I('p_id')}/intId/{$vo.id}/type/paramOut" class="fa fa-dedent"> 出参管理</a></li>
-											<li><a href="__ROOT__/{$Think.CONTROLLER_NAME}/interParams/m_id/{:I('m_id')}/p_id/{:I('p_id')}/intId/{$vo.id}/type/errorCode" class="fa fa-times-circle"> ErrorCode管理</a></li>
+											<li><a href="{:U('interParams' , array('m_id' => I('m_id'), 'p_id'  => I('p_id'), 'intId' => $vo['id'] , 'type' => 'paramIn'))}" class="fa fa-indent"> 入参管理</a></li>
+											<li><a href="{:U('interParams' , array('m_id' => I('m_id'), 'p_id'  => I('p_id'), 'intId' => $vo['id'] , 'type' => 'paramOut'))}" class="fa fa-dedent"> 出参管理</a></li>
+											<li><a href="{:U('interParams' , array('m_id' => I('m_id'), 'p_id'  => I('p_id'), 'intId' => $vo['id'], 'type' => 'errorCode'))}" class="fa fa-times-circle"> Code管理</a></li>
+											<li class="divider"></li>
+											<li><a href="{:U('viewDetails' , array('m_id' => I('m_id'), 'p_id'  => I('p_id'), 'id' => $vo['id']))}" class="fa fa-tasks">详情</a></li>
 											<li class="divider"></li>
 											<li><a href="#myAlert" data-toggle="modal" onclick="javascript:deleteItem(0 , '{$vo.id}');" class="fa fa-trash"> 删除</a></li>
 										</ul>
@@ -94,16 +98,29 @@
 					<div class="modal-body">
 						<form action="__ROOT__/{$Think.CONTROLLER_NAME}/viewList/" method="get" id="searchFrom" class="form-horizontal">
 							<div class="control-group">
-								<label class="control-label">分类名称</label>
+								<label class="control-label">名称</label>
 								<div class="controls">
 									<input type="text" name="NAME" id="NAME_AD" class="span11" placeholder="分类名称" />
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label">分类类型</label>
+								<label class="control-label">分类</label>
 								<div class="controls">
-									<label class="fl span4"> <input type="radio" name="PID" value="IS NULL" /> 父级分类</label>
-									<label class="fl"> <input type="radio" name="PID" value="IS NOT NULL" /> 子分类</label>
+									<input type="text" name="CATEGORY_NAME"  class="span11" placeholder="分类名称" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">类型</label>
+								<div class="controls">
+									<label class="fl span4"> <input type="radio" name="INT_METHOD" value="00A" />GET方式</label>
+									<label class="fl"> <input type="radio" name="INT_METHOD" value="00B" />POST方式</label>
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<label class="control-label">作者</label>
+								<div class="controls">
+									<input type="text" name="AUTHOR"  class="span11" placeholder="接口作者" />
 								</div>
 							</div>
 							<input type="hidden" name="m_id" value="{:I('m_id')}" /> 
@@ -125,7 +142,7 @@
 	</div>
 </div>
 <script type="text/javascript">
-	var deleteUrl = "__ROOT__/{$Think.CONTROLLER_NAME}/delete/";
+	var deleteUrl = "__ROOT__/{$Think.CONTROLLER_NAME}/deleteInterface/";
 	var mid = "{:I('m_id')}";
 	var pid = "{:I('p_id')}";
 </script>

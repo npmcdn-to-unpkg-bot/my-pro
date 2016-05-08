@@ -85,7 +85,7 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
 <div id="sidebar"><a href="#" class="visible-phone"><i class="fa fa-home"></i> Dashboard</a>
 	<ul>
 	
-	<li <?php if(I('p_id') == "" || I('p_id') == null){?>class="active"<?php }?>><a href="__ROOT__/index/index"><i class="fa fa-home"></i> <span>首页</span></a> </li>
+	<li <?php if(I('p_id') == "" || I('p_id') == null){?>class="active"<?php }?>><a href="{:U('Admin/Index/index') , ''}"><i class="fa fa-home"></i> <span>首页</span></a> </li>
 
 	<volist name="Menu" id="menuItem">
 		<if condition="count($menuItem['subMenu']) gt 0">

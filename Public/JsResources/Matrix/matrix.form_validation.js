@@ -181,6 +181,39 @@ $(document).ready(function(){
 		}
 	});
 	
+	//ErrorCode信息表单验证
+	$("#errorcode_validate").validate({
+		rules:{
+			ecName:{
+				required:true,
+				maxlength:20,
+			},
+			ecMsg:{
+				required:true,
+				maxlength:200,
+			},
+			ecSort:{
+				required:true,
+				digits:true
+			},
+			discription:{
+				required:true,
+				maxlength:200,
+			}
+		},
+		errorClass: "help-inline",
+		errorElement: "span",
+		highlight:function(element, errorClass, validClass) {
+			$(element).parents('.control-group').removeClass('success');
+			$(element).parents('.control-group').addClass('error');
+		},
+		unhighlight: function(element, errorClass, validClass) {
+			$(element).parents('.control-group').removeClass('error');
+			$(element).parents('.control-group').addClass('success');
+		}
+	});
+	
+	
 });
 
 /*

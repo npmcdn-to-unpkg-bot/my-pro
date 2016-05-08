@@ -37,10 +37,10 @@ class IndexController extends CommonController {
 		
 		$this->display ();
 	}
+	
 	public function login() {
 		$this->display ();
 	}
-
 	
 	/**
 	 * 用途:

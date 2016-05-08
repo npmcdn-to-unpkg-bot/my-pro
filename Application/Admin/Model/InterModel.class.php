@@ -36,4 +36,44 @@ class InterModel extends CommonModel{
 			$this -> debug($ex -> getMessage(), 'Exception');
 		}
 	}
+
+
+	/**
+	 * 用途:根据接口id获取当前接口信息是否是当前用户所发布
+	 * @时间: 2016年5月6日 下午10:01:06
+	 * @作者: yaoyuan
+	 * @参数:
+	 * @返回:boolean
+	 */
+	public function isAuthor($id){
+		try{
+			$data = $this->where("ID='".$id."'")->find();
+			if(0 == count($data) || null == $data || empty($data) || $data['author_id'] != session('adminKey'))
+				return false;
+			return true;
+		}
+		catch(Exception $ex){
+			$this->debug($ex -> getMessage(), 'Exception');
+		}
+	}
+
+	/**
+	* 用途:根据接口ID逻辑删除接口
+	* @时间: 2016年5月6日 下午10:20:29
+	* @作者: yaoyuan
+	* @参数:id:接口id
+	* @返回:boolean
+	*/
+	public function deleteInterface($id){
+		try{
+			$data['ID'] = $id;
+			$data['STATE'] = '00C';
+			if($this->save($data))
+				return true;
+			return false;
+		}
+		catch(Exception $ex){
+			$this->debug($ex -> getMessage(), 'Exception');
+		}
+	}
 }

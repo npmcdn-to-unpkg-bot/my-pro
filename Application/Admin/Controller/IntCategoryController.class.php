@@ -67,8 +67,6 @@ class IntCategoryController extends CommonController{
 			{
 				if("m_id" == $key || 'p_id' == $key || "" == trim($item) || "p" == $key)
 					continue;
-				else if("PID" == $key)
-					$where .= "and " . $key . " " . $item;
 				else
 					$where .= " and " . $key . " like '%".$item."%'";
 			}
@@ -77,7 +75,6 @@ class IntCategoryController extends CommonController{
 			$page = new Page ( $pageInfo ['Count'], 10 );
 			$assignData ['pageData'] = $page->show ();
 			$assignData ['list'] = $this -> categoryModel ->where ( $where )->order ( 'sort desc' )->page ( I ( 'p' ), 10 )->select ();
-			
 			
 			$this -> assign($assignData);
 			$this -> display();

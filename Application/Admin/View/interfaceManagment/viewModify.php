@@ -70,14 +70,14 @@
 									<script id="demoOut" type="text/plain" style="width: 95%; height: 150px;">{$data['demo_out']}</script>
 								</div>
 							</div>
-
+							<!-- 
 							<div class="control-group">
 								<label class="control-label">接口开发者</label>
 								<div class="controls">
 									<input type="text" class="span5" name="author" id="" author"" placeholder="请输入接口开发人员姓名（必填）" value="{$data['author']}"/>
 								</div>
 							</div>
-
+							 -->
 							<div class="control-group">
 								<label class="control-label">排序</label>
 								<div class="controls">

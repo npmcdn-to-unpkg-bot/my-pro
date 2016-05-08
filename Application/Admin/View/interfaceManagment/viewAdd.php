@@ -78,7 +78,8 @@
 										style="width: 95%; height: 150px;"></script>
 								</div>
 							</div>
-
+							
+							<!-- 
 							<div class="control-group">
 								<label class="control-label">接口开发者</label>
 								<div class="controls">
@@ -86,7 +87,7 @@
 										author"" placeholder="请输入接口开发人员姓名（必填）" />
 								</div>
 							</div>
-
+							 -->
 							<div class="control-group">
 								<label class="control-label">排序</label>
 								<div class="controls">

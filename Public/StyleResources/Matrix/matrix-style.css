@@ -959,7 +959,15 @@ hr{ border-top-color:#dadada;}
 .update-done, .update-alert, .update-notice {
 	display: block;
 	float: left;
-	max-width: 76%;
+	max-width: 90%;
+}
+.update-done strong{
+	color:black;
+}
+.update-done p{
+	color:black;
+	line-height: 15px;
+	font-size: 15px;
 }
 /* Tables */
 tr:hover{ background:#f6f6f6;}

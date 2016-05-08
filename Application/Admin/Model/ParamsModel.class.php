@@ -15,6 +15,7 @@ namespace Admin\Model;
 use Admin\Common\CommonModel;
 use Think\Exception;
 use Common\Util\UUID;
+use Think\Model;
 
 /**
 *类注释
@@ -24,6 +25,25 @@ use Common\Util\UUID;
 */
 class ParamsModel extends CommonModel{
 	
+	private $intModel;
+	
+	/**
+	* 用途:构造函数
+	* @时间: 2016年5月7日 下午5:58:45
+	* @作者: yaoyuan
+	* @参数:
+	* @返回:
+	*/
+	public function __construct(){
+		try{
+			parent::__construct();
+			//实例化接口模型
+			$this->intModel = new \Admin\Model\InterModel();
+		}
+		catch(Exception $ex){
+			$this->debug($ex -> getMessage(), 'Exception');
+		}
+	}
 	/**
 	* 用途:新建参数
 	* @时间: 2016年5月4日 下午5:12:44
@@ -40,12 +60,35 @@ class ParamsModel extends CommonModel{
 			$data['PARAM_LOC'] = $i['paramInLoc'];
 			$data['SORT'] = $i['paramInSort'];
 			$data['MUST'] = $i['paramInMust'];
-			$data['PARAM_DIC'] = '00A';
+			$data['PARAM_DIC'] = $i['paramDic'];
 			$data['STATE'] = '00A';
 			$data['DISCRIPTION'] = trim(htmlspecialchars($i['discription']));
 			$data['JSON_DISCRIPTION'] = trim(htmlspecialchars($i['paramInJsonDis']));
 			$data ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
-			return $this -> add($data);			
+			
+			$intData['ID'] = $i['intId'];
+			$intData['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			return ($this -> add($data) && $this->intModel -> save($intData));			
+		}
+		catch(Exception $ex){
+			$this -> debug($ex -> getMessage(), 'Exception');
+		}
+	}
+
+	public function paramModify($i){
+		try {
+			$data['ID'] = $i['paramId'];
+			$data['NAME'] = trim(htmlspecialchars($i['paramInName']));
+			$data['PARAM_TYPE'] = $i['paramInType'];
+			$data['PARAM_LOC'] = $i['paramInLoc'];
+			$data['SORT'] = $i['paramInSort'];
+			$data['MUST'] = $i['paramInMust'];
+			$data['DISCRIPTION'] = trim(htmlspecialchars($i['discription']));
+			$data['JSON_DISCRIPTION'] = trim(htmlspecialchars($i['paramInJsonDis']));
+			
+			$intData['ID'] = $i['intId'];
+			$intData['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			return ($this -> save($data) && $this->intModel -> save($intData));
 		}
 		catch(Exception $ex){
 			$this -> debug($ex -> getMessage(), 'Exception');
@@ -59,10 +102,16 @@ class ParamsModel extends CommonModel{
 	* @参数:$id 参数ID
 	* @返回:boolean
 	*/
-	public function deleteParam($id){
+	public function deleteParam($id , $intId){
 		try{
 			$data['ID'] = $id;
 			$data['STATE'] = '00B';
+			
+						
+			$intData['ID'] = $intId;
+			$intData['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$this->intModel -> save($intData);
+			
 			if(false !== $this->save($data))
 				return true;
 			else 

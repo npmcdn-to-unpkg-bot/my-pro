@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta chartset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<script src="/MyFramework/Public/JsResources/Jquery/jquery.min.js"></script> 
+<script src="/myframework/Public/JsResources/Jquery/jquery.min.js"></script> 
 </head>
 <body>
 <a onclick="login();">testtest</a>

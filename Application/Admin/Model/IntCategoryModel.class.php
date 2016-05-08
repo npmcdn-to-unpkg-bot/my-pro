@@ -146,5 +146,6 @@ class IntCategoryModel extends CommonModel{
 			$this->debug($e -> getMessage(), 'Exception');
 		}
 	}
+
 }
 
