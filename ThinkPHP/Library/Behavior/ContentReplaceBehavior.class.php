@@ -36,7 +36,7 @@ class ContentReplaceBehavior {
             '__CONTROLLER__'=>  __CONTROLLER__,
             '__URL__'       =>  __CONTROLLER__,
             '__PUBLIC__'    =>  __ROOT__.'/Public',// 站点公共目录
-            '__BG_NAME__'   =>  'YY_BG',//UI后台标识
+            '__BG_NAME__'   =>  '车维汇后台管理系统',//UI后台标识
         );
         // 允许用户自定义模板的字符串替换
         if(is_array(C('TMPL_PARSE_STRING')) )

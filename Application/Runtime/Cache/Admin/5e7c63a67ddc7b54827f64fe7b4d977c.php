@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 <head>
-<title>YY_BG</title>
+<title>车维汇后台管理系统</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta chartset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,7 +33,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 <!--Header-part-->
 <div id="header">
 
-  <h1><a href="dashboard.html">YY_BG</a></h1>
+  <h1><a href="dashboard.html">车维汇后台管理系统</a></h1>
 </div>
 <!--close-Header-part--> 
 <!--top-Header-menu-->
