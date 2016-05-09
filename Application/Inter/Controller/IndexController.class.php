@@ -127,6 +127,7 @@ class IndexController extends CommonController{
 			$this->debug($ex->getMessage(), 'Exception');
 		}
 	}
+	
 	/**
 	* 用途:
 	* @时间: 2016年5月7日 上午11:54:24

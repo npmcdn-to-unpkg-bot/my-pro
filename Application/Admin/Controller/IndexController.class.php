@@ -28,8 +28,7 @@ use Think\Model;
  */
 class IndexController extends CommonController {
 	
-	public function index($id = 0) {
-		$uuid = new UUID();
+	public function index() {
 		
 		$assignData ['PAGE_FROM'] = "Index";
 		
