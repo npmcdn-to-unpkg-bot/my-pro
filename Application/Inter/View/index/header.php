@@ -24,13 +24,7 @@
 </switch>
 <load href="__STYLE_RES__/font-awesome-4.4.0/css/font-awesome.css" />
 <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'> -->
-<if condition="$EDIT">
-    <script type="text/javascript" charset="utf-8" src="__UEDIT__/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="__UEDIT__/ueditor.all.min.js"> </script>
-    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
-    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
-    <script type="text/javascript" charset="utf-8" src="__UEDIT__/lang/zh-cn/zh-cn.js"></script>
-</if>
+
 <!-- 代码着色器初始化 -->
 <if condition="$CODE eq true">
 	<load href="__STYLE_RES__/code/shCoreDefault.css" />
@@ -47,22 +41,22 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
 <!--Header-part-->
 <div id="header">
 
-  <h1><a href="dashboard.html">__BG_NAME__</a></h1>
+  <h1><a href="dashboard.html">车维汇汽车服务平台-接口发布管理</a></h1>
 </div>
 <!--close-Header-part--> 
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
-    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="fa fa-user"></i>  <span class="text">欢迎你 {$Think.session.adminName}</span><b class="caret"></b></a>
-      <ul class="dropdown-menu">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="fa fa-user"></i>  <span class="text">欢迎使用</span><b class="caret"></b></a>
+      <!-- <ul class="dropdown-menu">
         <li><a href="#"><i class="fa fa-user"></i> My Profile</a></li>
         <li class="divider"></li>
         <li><a href="#"><i class="fa fa-check"></i> My Tasks</a></li>
         <li class="divider"></li>
         <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-      </ul>
+      </ul> -->
     </li>
-    <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+    <!-- <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><a class="sAdd" title="" href="#"><i class="fa-plus"></i> new message</a></li>
         <li class="divider"></li>
@@ -74,7 +68,7 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
       </ul>
     </li>
     <li class=""><a title="" href="#setting"  data-toggle="modal"><i class="fa fa-cog"></i> <span class="text">密码设置</span></a></li>
-    <li class=""><a title="" href="__ROOT__/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li>
+    <li class=""><a title="" href="__ROOT__/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li> -->
   </ul>
 </div>
 <!--close-top-Header-menu-->
