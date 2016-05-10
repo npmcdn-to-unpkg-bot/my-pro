@@ -19,6 +19,4 @@ return array (
 				'CODE' => '200',
 				'MSG' => '接口调用成功',
 				),
-		'URL_PREFIX' => 'http://int.gsvipcar.cn:8001',
-		'TEST_URL_PREFIX' => 'http://int.gsvipcar.cn:8001',
 );

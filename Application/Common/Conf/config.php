@@ -28,5 +28,7 @@ return array(
 		),
 		//配置默认模块
 		'MODULE_ALLOW_LIST' => array ('Admin' , 'Home' , 'Inter'),
-		'DEFAULT_MODULE' => 'Admin'
+		'DEFAULT_MODULE' => 'Admin',
+		'URL_PREFIX' => 'http://int.gsvipcar.cn:8001',
+		'TEST_URL_PREFIX' => 'http://int.gsvipcar.cn:8001',
 );
