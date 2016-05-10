@@ -56,6 +56,7 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
         <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
       </ul> -->
     </li>
+    <li  class="dropdown" id="profile-messages" ><a title=""  href="http://www.bejson.com/"  target="_blank"><i class="fa fa-retweet"></i>  <span class="text">Json在线解析工具</span><b class="caret"></b></a></li>
     <!-- <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><a class="sAdd" title="" href="#"><i class="fa-plus"></i> new message</a></li>
