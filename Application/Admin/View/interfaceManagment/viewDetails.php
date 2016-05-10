@@ -127,7 +127,6 @@
 					                  <th width="6%">参数排序</th>
 					                  <th width="41%">参数描述</th>
 					                  <th width="12%">创建时间</th>
-					                  <th width="13%">操作</th>
 					                </tr>
 					              </thead>
 					              <tbody>
@@ -157,18 +156,6 @@
 												?>
 						                  </td>
 						                  <td>{$pdata.create_time}</td>
-						                  <td>
-						                  <div class="btn-group">
-												<button data-toggle="dropdown" class="btn btn-mini dropdown-toggle ">
-													单项操作<span class="caret"></span>
-												</button>
-												<ul class="dropdown-menu">
-													<li><a href="{:U('interParams' , array('m_id'=>I('m_id') , 'p_id' => I('p_id') , 'paramInId' => $pdata['id'] , 'intId' => $intId , 'type' => 'paramIn')) , ''}" class="fa fa-edit"> 修改参数</a></li>
-													<li class="divider"></li>
-													<li><a href="{:U('deleteParam' , array('m_id'=>I('m_id') , 'p_id' => I('p_id') , 'paramInId' => $pdata['id'] , 'intId' => $intId , 'type' => 'paramIn') , '')}" class="fa fa-indent"> 删除参数</a></li>
-												</ul>
-											</div>
-						                  </td>
 						                </tr>
 						                <tr style="display: none;" id="json_{$pdata.id}">
 						                  <td>Json描述</td>
@@ -190,7 +177,6 @@
 					                  <th width="6%">参数排序</th>
 					                  <th width="41%">参数描述</th>
 					                  <th width="12%">创建时间</th>
-					                  <th width="13%">操作</th>
 					                </tr>
 					              </thead>
 					              <tbody>
@@ -220,18 +206,6 @@
 												?>
 						                  </td>
 						                  <td>{$pdata.create_time}</td>
-						                  <td>
-						                  <div class="btn-group">
-												<button data-toggle="dropdown" class="btn btn-mini dropdown-toggle ">
-													单项操作<span class="caret"></span>
-												</button>
-												<ul class="dropdown-menu">
-													<li><a href="{:U('interParams' , array('m_id'=>I('m_id') , 'p_id' => I('p_id') , 'paramOutId' => $pdata['id'] , 'intId' => $intId , 'type' => 'paramOut')) , ''}" class="fa fa-edit"> 修改参数</a></li>
-													<li class="divider"></li>
-													<li><a href="{:U('deleteParam' , array('m_id'=>I('m_id') , 'p_id' => I('p_id') , 'paramOutId' => $pdata['id'] , 'intId' => $intId , 'type' => 'paramOut') , '')}" class="fa fa-indent"> 删除参数</a></li>
-												</ul>
-											</div>
-						                  </td>
 						                </tr>
 						                <tr style="display: none;" id="json_{$pdata.id}">
 						                  <td>Json描述</td>
@@ -251,7 +225,6 @@
 					                  <th width="29%">描述</th>
 					                  <th width="6%">参数排序</th>
 					                  <th width="12%">创建时间</th>
-					                  <th width="13%">操作</th>
 					                </tr>
 					              </thead>
 					              <tbody>
@@ -276,18 +249,6 @@
 						                  </td>
 						                  <td>{$ecdata.sort}</td>
 						                  <td>{$ecdata.create_time}</td>
-						                  <td>
-						                  <div class="btn-group">
-												<button data-toggle="dropdown" class="btn btn-mini dropdown-toggle ">
-													单项操作<span class="caret"></span>
-												</button>
-												<ul class="dropdown-menu">
-													<li><a href="{:U('interParams' , array('m_id'=>I('m_id') , 'p_id' => I('p_id') , 'ecId' => $ecdata['id'] , 'intId' => $intId , 'type' => 'errorCode')) , ''}" class="fa fa-edit"> 修改参数</a></li>
-													<li class="divider"></li>
-													<li><a href="{:U('deleteErrorCode' , array('m_id'=>I('m_id') , 'p_id' => I('p_id') , 'ecId' => $ecdata['id'] , 'intId' => $intId , 'type' => 'errorCode') , '')}" class="fa fa-indent"> 删除参数</a></li>
-												</ul>
-											</div>
-						                  </td>
 						                </tr>
 						                <tr style="display: none;" id="json_{$pdata.id}">
 						                  <td>Json描述</td>
