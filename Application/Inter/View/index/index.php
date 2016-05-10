@@ -31,8 +31,8 @@
 					<strong>调用方式</strong>:<if condition="$item.int_method eq '00A'">GET方式<else/>POST方式</if>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<strong>所属分类</strong>:{$item.category_name}
 					</span>
-					<span onclick="copy_code('{$item.url}');"><strong>生产环境地址</strong>:{$item.url}<i class="fa fa-copy"></i></span>
-					<span><strong>测试环境地址</strong>:{$item.test_url}<i class="fa fa-copy"></i></span>
+					<span onclick="copy_code('{$item.url}');"><strong>生产环境地址</strong>:{:C('URL_PREFIX')}{$item.url}<i class="fa fa-copy"></i></span>
+					<span><strong>测试环境地址</strong>:{:C('TEST_URL_PREFIX')}{$item.test_url}<i class="fa fa-copy"></i></span>
 				</div>
 				<div class="update-date">
 					<span class="update-day"><?php echo date("d" , strtotime($item['update_time'])); ?></span>

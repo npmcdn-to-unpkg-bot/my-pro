@@ -121,11 +121,9 @@ $(document).ready(function(){
 				required:true,
 			},
 			url:{
-				url:true,
 				maxlength:256,
 			},
 			testUrl:{
-				url:true,
 				maxlength:256,
 			},
 			author:{

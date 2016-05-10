@@ -56,12 +56,13 @@ class TestController extends InterfaceController{
 		}
 	}
 	
-	public function invok(){
+	public function invoke(){
 		try{
 			$timeStamp =  time();
 			$signature = md5('@vipcar' . '@5b7e2ebd-f26a-d8e3-0893-fdef6efb2fa6' . 'iOS' . $timeStamp);
+			$this->debug($signature, 'md5');
 			$header = array("Content-type:text/html; charset=utf-8","SIGNATURE:" . $signature , "CLIENT:iOS" , "TIMESTAMP:".time());
-			$response = Http::getResponse("http://web/myframework/inter/test/test", "" ,'GET' , $header);
+			$response = Http::getResponse("http://ht.gsvipcar.cn:8001/inter/test/test", "" ,'GET' , $header);
 			$this->debug($response, 'ResponseData');
 			echo dump(json_decode($response , true));
 		}

@@ -36,11 +36,11 @@
 							</tr>
 							<tr>
 								<td>正式地址</td>
-								<td>{$intData.url}</td>
+								<td>{:C('URL_PREFIX')}{$intData.url}</td>
 							</tr>
 							<tr>
 								<td>测试地址</td>
-								<td>{$intData.test_url}</td>
+								<td>{:C('TEST_URL_PREFIX')}{$intData.test_url}</td>
 							</tr>
 							<tr>
 								<td>备注</td>

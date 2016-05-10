@@ -14,6 +14,7 @@ namespace Org\Net;
  * 提供一系列的Http方法
  * @author    liu21st <liu21st@gmail.com>
  */
+ use Think\Exception;
 class Http {
 
     /**

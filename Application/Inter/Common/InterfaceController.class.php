@@ -102,9 +102,8 @@ class InterfaceController extends Controller {
 			$signature = $headers['Signature'];
 			$timeStamp = $headers['Timestamp'];
 // 			$appKey = $headers['Appkey'];
-			Log::write("Fuck:Client:" . $clientType . "；Signature:" . $signature . ";Timestamp:" . $timeStamp , "INFO");
 			//客户端类型校验
-			if(C('IOS_CLIENT_TYPE') != $clientType || C('ANDROID_CLIENT_TYPE') != $clientType)
+			if(C('IOS_CLIENT_TYPE') != $clientType && C('ANDROID_CLIENT_TYPE') != $clientType)
 				return C('ERROR_CODE.CLIENT_TYPE_ERROR');
 			//签名校验
 			if(C('IOS_CLIENT_TYPE') == $clientType)
