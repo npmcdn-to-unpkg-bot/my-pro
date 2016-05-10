@@ -42,14 +42,14 @@
 							<div class="control-group">
 								<label class="control-label">生产环境接口地址</label>
 								<div class="controls">
-									{$intData['url']}
+									{:C('URL_PREFIX')}{$intData['url']}
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label">测试环境接口地址</label>
 								<div class="controls">
-									{$intData['test_url']}
+									{:C('TEST_URL_PREFIX')}{$intData['test_url']}
 								</div>
 							</div>
 
