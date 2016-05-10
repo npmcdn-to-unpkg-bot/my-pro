@@ -79,6 +79,7 @@ class InterfaceController extends Controller {
 	public function getRequestHeaders(){
 		try{
 			$headers = array();
+			
 			foreach ($_SERVER as $name => $value)
 			{
 				if (substr($name, 0, 5) == 'HTTP_')
@@ -93,14 +94,28 @@ class InterfaceController extends Controller {
 		}
 	}
 	
-	public function legitimacyCheck($signature , $clientType , $timeStamp){
+	public function legitimacyCheck(){
 		try{
+			$headers = $this->getRequestHeaders();
+			Log::write("Headers:" . json_encode($headers), "INFO");
+			$clientType = $headers['Client'];
+			$signature = $headers['Signature'];
+			$timeStamp = $headers['Timestamp'];
+// 			$appKey = $headers['Appkey'];
+			Log::write("Fuck:Client:" . $clientType . "；Signature:" . $signature . ";Timestamp:" . $timeStamp , "INFO");
 			//客户端类型校验
 			if(C('IOS_CLIENT_TYPE') != $clientType && C('ANDROID_CLIENT_TYPE') != $clientType)
-				return C('ERROR_CODE.CLIENT_TYPE_ERROR')['CODE'];
+				return C('ERROR_CODE.CLIENT_TYPE_ERROR');
 			//签名校验
-			
-				
+			if(C('IOS_CLIENT_TYPE') == $clientType)
+				$curAppk = C('IOS_APP_KEY');
+			else if(C('ANDROID_CLIENT_TYPE') == $clientType)
+				$curAppk = C('ANDROID_APP_KEY');
+			$mkSignature = md5(C('INTERFACE_AUTH_PREFIX') . $curAppk . $clientType . $timeStamp);
+			Log::write("appk:" . $curAppk, "INFO");
+			if($signature != $mkSignature)
+				return C('ERROR_CODE.SIGNATURE_ERROR');
+			return true;
 // 			return if($signature === md5($str))
 		}
 		catch(Exception $ex){

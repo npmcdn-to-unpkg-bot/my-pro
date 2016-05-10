@@ -13,7 +13,10 @@ return array (
 		'LOG_RECORD' => true,//开起日志记录
 		'ERROR_CODE' => array(
 				'CLIENT_TYPE_ERROR' => array('CODE' => '0000' , 'MSG' => '使用非法的客户端'),
-				'SIGNATURE_ERROR' => array('CODE' => '0001' , 'MSG' => '请求签名校验失败'),
+				'SIGNATURE_ERROR' => array('CODE' => '0001' , 'MSG' => '接口签名校验失败'),
 		),
-		
+		'SUCCESS_CODE' => array(
+				'CODE' => '200',
+				'MSG' => '接口调用成功',
+				),
 );

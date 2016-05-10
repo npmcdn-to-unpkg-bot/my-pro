@@ -39,11 +39,16 @@ class TestController extends InterfaceController{
 	public function Test(){
 		try{
 			$response = array();
-			$headers = $this->getRequestHeaders();
-			$response['code']  = $this->legitimacyCheck($headers['signature'] , I('clientType') , I('timeStamp'));
-			$this->debug($response, 'fuce');
-// 			if(C('ERROR_CODE.CLIENT_TYPE_ERROR')['CODE'] == $response['code'] )
-// 				$response['msg'] = C('ERROR_CODE.CLIENT_TYPE_ERROR')['MSG'];
+			$chk  = $this->legitimacyCheck();
+			if($chk !== true){
+				echo json_encode($chk);
+				return;
+			}
+			
+			$response['code'] = C('SUCCESS_CODE.CODE');
+			$response['msg'] = C('SUCCESS_CODE.MSG');
+			$response['content'] = "咱们的接口连通性OK了!";
+			$response['timestamp'] = time();
 			echo json_encode($response);
 		}
 		catch(Exception $ex){
@@ -54,10 +59,11 @@ class TestController extends InterfaceController{
 	public function invok(){
 		try{
 			$timeStamp =  time();
-			$signature = md5(C('PREFIX') . C('IOS_APP_KEY') . 'iOS' . $timeStamp);
-			$header = array("Content-type:text/html; charset=utf-8","signatures:" . $signature);
-			$response = Http::getResponse("http://web/myframework/inter/test/test", array('clientType' => 'iOS' , 'timeStamp' => $timeStamp) ,'GET' , $header);
+			$signature = md5('@vipcar' . '@5b7e2ebd-f26a-d8e3-0893-fdef6efb2fa6' . 'iOS' . $timeStamp);
+			$header = array("Content-type:text/html; charset=utf-8","SIGNATURE:" . $signature , "CLIENT:iOS" , "TIMESTAMP:".time());
+			$response = Http::getResponse("http://web/myframework/inter/test/test", "" ,'GET' , $header);
 			$this->debug($response, 'ResponseData');
+			echo dump(json_decode($response , true));
 		}
 		catch(Exception $ex){
 			$this -> debug($ex->getMessage(), 'Excetpion');
