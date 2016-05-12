@@ -18,6 +18,7 @@ use Think\Exception;
 use Think\Page;
 use Think\Controller;
 use Admin\Model;
+use Common\Util\UUID;
 
 /**
 *类注释
@@ -95,7 +96,6 @@ class IndexController extends CommonController{
 			}
 			
 			$pageInfo ['Count'] = $this -> intModel ->where ( $where)->count ();
-			$this->debug($this->intModel->getLastSql(), 'sql');
 			$page = new Page ( $pageInfo ['Count'], 10 );
 			$assignData ['pageData'] = $page->show ();
 			$assignData ['list'] = $this -> intModel ->where ( $where )->order ( 'update_time desc' )->page ( I ( 'p' ), 10 )->select ();
