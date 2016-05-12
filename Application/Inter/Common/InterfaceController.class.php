@@ -97,11 +97,9 @@ class InterfaceController extends Controller {
 	public function legitimacyCheck(){
 		try{
 			$headers = $this->getRequestHeaders();
-			Log::write("Headers:" . json_encode($headers), "INFO");
 			$clientType = $headers['Client'];
 			$signature = $headers['Signature'];
 			$timeStamp = $headers['Timestamp'];
-// 			$appKey = $headers['Appkey'];
 			//客户端类型校验
 			if(C('IOS_CLIENT_TYPE') != $clientType && C('ANDROID_CLIENT_TYPE') != $clientType)
 				return C('ERROR_CODE.CLIENT_TYPE_ERROR');
@@ -111,11 +109,9 @@ class InterfaceController extends Controller {
 			else if(C('ANDROID_CLIENT_TYPE') == $clientType)
 				$curAppk = C('ANDROID_APP_KEY');
 			$mkSignature = md5(C('INTERFACE_AUTH_PREFIX') . $curAppk . $clientType . $timeStamp);
-			Log::write("appk:" . $curAppk, "INFO");
 			if($signature != $mkSignature)
 				return C('ERROR_CODE.SIGNATURE_ERROR');
 			return true;
-// 			return if($signature === md5($str))
 		}
 		catch(Exception $ex){
 			Log::write($ex->getMessage() , 'EMERG');
