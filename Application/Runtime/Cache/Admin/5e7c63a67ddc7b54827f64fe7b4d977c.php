@@ -7,25 +7,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- 引入样式表 -->
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Bootstrap/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Bootstrap/bootstrap-responsive.min.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Matrix/matrix-style.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Matrix/matrix-media.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Bootstrap/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Matrix/matrix-style.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Matrix/matrix-media.css" />
 
-<?php switch($PAGE_FROM): case "Index": ?><link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/fullcalendar.css" />
-		<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Matrix/matrix-media.css/jquery.gritter.css" /><?php break;?>
-	<?php case "List": case "Add": ?><link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/uniform.css" />
-		<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/select2.css" /><?php break; endswitch;?>
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/font-awesome-4.4.0/css/font-awesome.css" />
+<?php switch($PAGE_FROM): case "Index": ?><link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/fullcalendar.css" />
+		<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Matrix/matrix-media.css/jquery.gritter.css" /><?php break;?>
+	<?php case "List": case "Add": ?><link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/uniform.css" />
+		<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/select2.css" /><?php break; endswitch;?>
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/font-awesome-4.4.0/css/font-awesome.css" />
 <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'> -->
-<?php if($EDIT): ?><script type="text/javascript" charset="utf-8" src="/myframework/Public/uedit/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/myframework/Public/uedit/ueditor.all.min.js"> </script>
+<?php if($EDIT): ?><script type="text/javascript" charset="utf-8" src="/my-pro/Public/uedit/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/my-pro/Public/uedit/ueditor.all.min.js"> </script>
     <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
     <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
-    <script type="text/javascript" charset="utf-8" src="/myframework/Public/uedit/lang/zh-cn/zh-cn.js"></script><?php endif; ?>
+    <script type="text/javascript" charset="utf-8" src="/my-pro/Public/uedit/lang/zh-cn/zh-cn.js"></script><?php endif; ?>
 
 <script type="text/javascript">
-var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
+var urlHead="/my-pro/<?php echo (CONTROLLER_NAME); ?>/";
 </script>
 
 </head>
@@ -60,7 +60,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
       </ul>
     </li>
     <li class=""><a title="" href="#setting"  data-toggle="modal"><i class="fa fa-cog"></i> <span class="text">密码设置</span></a></li>
-    <li class=""><a title="" href="/myframework/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li>
+    <li class=""><a title="" href="/my-pro/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li>
   </ul>
 </div>
 <!--close-top-Header-menu-->
@@ -81,7 +81,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 
 	<?php if(is_array($Menu)): $i = 0; $__LIST__ = $Menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menuItem): $mod = ($i % 2 );++$i; if(count($menuItem['subMenu']) > 0): ?><li class="submenu <?php if(I('p_id') == $menuItem['id']){?> open<?php }?>"> <a href="#"><i class="fa <?php echo ($menuItem['menu_icon']); ?>"></i> <span><?php echo ($menuItem["menu_name"]); ?></span> <span class="label label-important"><?php echo count($menuItem['subMenu']);?></span></a>
 			<ul>
-				<?php if(is_array($menuItem["subMenu"])): $i = 0; $__LIST__ = $menuItem["subMenu"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$submenuItem): $mod = ($i % 2 );++$i;?><li <?php if(I('m_id') == $submenuItem['id']){?>class="active"<?php }?>><span><a href="/myframework<?php echo ($submenuItem["uri"]); ?>/m_id/<?php echo ($submenuItem["id"]); ?>/p_id/<?php echo ($menuItem["id"]); ?>"><i class="fa <?php echo ($submenuItem["menu_icon"]); ?>" style="margin-right: 10px;"></i><?php echo ($submenuItem["menu_name"]); ?></a></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
+				<?php if(is_array($menuItem["subMenu"])): $i = 0; $__LIST__ = $menuItem["subMenu"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$submenuItem): $mod = ($i % 2 );++$i;?><li <?php if(I('m_id') == $submenuItem['id']){?>class="active"<?php }?>><span><a href="/my-pro<?php echo ($submenuItem["uri"]); ?>/m_id/<?php echo ($submenuItem["id"]); ?>/p_id/<?php echo ($menuItem["id"]); ?>"><i class="fa <?php echo ($submenuItem["menu_icon"]); ?>" style="margin-right: 10px;"></i><?php echo ($submenuItem["menu_name"]); ?></a></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
 			</ul>
 			</li>
 			<?php else: ?>
@@ -95,7 +95,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 <!--breadcrumbs-->
   <div id="content-header">
     <div id="breadcrumb"> 
-	    <a href="/myframework/Index/Index" title="Go to Home" class="tip-bottom"><i class="fa-home"></i> 首页</a>
+	    <a href="/my-pro/Index/Index" title="Go to Home" class="tip-bottom"><i class="fa-home"></i> 首页</a>
 	    <?php if($BreadCrumb[0] != null): ?><a href="#" class="current"><?php echo ($BreadCrumb[0]); ?></a><?php endif; ?>
 	    <?php if($BreadCrumb[1] != null): ?><a href="#" class="current"><?php echo ($BreadCrumb[1]); ?></a><?php endif; ?>
 	    
@@ -109,7 +109,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 						<h3>密码设置</h3>
 					</div>
 					<div class="modal-body">
-						<form action="/myframework/Admins/setPsw/" method="post" id="setPswForm" class="form-horizontal">
+						<form action="/my-pro/Admins/setPsw/" method="post" id="setPswForm" class="form-horizontal">
 
 							<div class="control-group">
 								<label class="control-label">旧密码</label>
@@ -187,19 +187,19 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
           <div class="widget-content nopadding collapse in" id="collapseG2">
             <ul class="recent-posts">
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/myframework/Public/ImgResources/Admin/img/demo/av1.jpg"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/my-pro/Public/ImgResources/Admin/img/demo/av1.jpg"> </div>
                 <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
                   <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
                 </div>
               </li>
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/myframework/Public/ImgResources/Admin/img/demo/av2.jpg"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/my-pro/Public/ImgResources/Admin/img/demo/av2.jpg"> </div>
                 <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
                   <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
                 </div>
               </li>
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/myframework/Public/ImgResources/Admin/img/demo/av4.jpg"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/my-pro/Public/ImgResources/Admin/img/demo/av4.jpg"> </div>
                 <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
                   <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
                 </div>
@@ -298,11 +298,11 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
               </div>
               <div class="panel-content nopadding">
                 <ul class="contact-list">
-                  <li id="user-Alex" class="online"><a href="#"><img alt="" src="/myframework/Public/ImgResources/Admin/img/demo/av1.jpg" /> <span>Alex</span></a></li>
-                  <li id="user-Linda"><a href="#"><img alt="" src="/myframework/Public/ImgResources/Admin/img/demo/av2.jpg" /> <span>Linda</span></a></li>
-                  <li id="user-John" class="online new"><a href="#"><img alt="" src="/myframework/Public/ImgResources/Admin/img/demo/av3.jpg" /> <span>John</span></a><span class="msg-count badge badge-info">3</span></li>
-                  <li id="user-Mark" class="online"><a href="#"><img alt="" src="/myframework/Public/ImgResources/Admin/img/demo/av4.jpg" /> <span>Mark</span></a></li>
-                  <li id="user-Maxi" class="online"><a href="#"><img alt="" src="/myframework/Public/ImgResources/Admin/img/demo/av5.jpg" /> <span>Maxi</span></a></li>
+                  <li id="user-Alex" class="online"><a href="#"><img alt="" src="/my-pro/Public/ImgResources/Admin/img/demo/av1.jpg" /> <span>Alex</span></a></li>
+                  <li id="user-Linda"><a href="#"><img alt="" src="/my-pro/Public/ImgResources/Admin/img/demo/av2.jpg" /> <span>Linda</span></a></li>
+                  <li id="user-John" class="online new"><a href="#"><img alt="" src="/my-pro/Public/ImgResources/Admin/img/demo/av3.jpg" /> <span>John</span></a><span class="msg-count badge badge-info">3</span></li>
+                  <li id="user-Mark" class="online"><a href="#"><img alt="" src="/my-pro/Public/ImgResources/Admin/img/demo/av4.jpg" /> <span>Mark</span></a></li>
+                  <li id="user-Maxi" class="online"><a href="#"><img alt="" src="/my-pro/Public/ImgResources/Admin/img/demo/av5.jpg" /> <span>Maxi</span></a></li>
                 </ul>
               </div>
             </div>
@@ -325,19 +325,19 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
           <div class="widget-content nopadding fix_hgt">
             <ul class="recent-posts">
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/myframework/Public/ImgResources/Admin/img/demo/av1.jpg"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/my-pro/Public/ImgResources/Admin/img/demo/av1.jpg"> </div>
                 <div class="article-post"> <span class="user-info">John Deo</span>
                   <p>Web Desginer &amp; creative Front end developer</p>
                 </div>
               </li>
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/myframework/Public/ImgResources/Admin/img/demo/av2.jpg"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/my-pro/Public/ImgResources/Admin/img/demo/av2.jpg"> </div>
                 <div class="article-post"> <span class="user-info">John Deo</span>
                   <p>Web Desginer &amp; creative Front end developer</p>
                 </div>
               </li>
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/myframework/Public/ImgResources/Admin/img/demo/av4.jpg"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/my-pro/Public/ImgResources/Admin/img/demo/av4.jpg"> </div>
                 <div class="article-post"> <span class="user-info">John Deo</span>
                   <p>Web Desginer &amp; creative Front end developer</p>
                 </div>
@@ -407,13 +407,13 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
           <div class="widget-content tab-content">
             <div id="tab1" class="tab-pane active">
               <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment.</p>
-              <img src="/myframework/Public/ImgResources/Admin/img/demo/demo-image1.jpg" alt="demo-image"/></div>
-            <div id="tab2" class="tab-pane"> <img src="/myframework/Public/ImgResources/Admin/img/demo/demo-image2.jpg" alt="demo-image"/>
+              <img src="/my-pro/Public/ImgResources/Admin/img/demo/demo-image1.jpg" alt="demo-image"/></div>
+            <div id="tab2" class="tab-pane"> <img src="/my-pro/Public/ImgResources/Admin/img/demo/demo-image2.jpg" alt="demo-image"/>
               <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment.</p>
             </div>
             <div id="tab3" class="tab-pane">
               <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. </p>
-              <img src="/myframework/Public/ImgResources/Admin/img/demo/demo-image3.jpg" alt="demo-image"/></div>
+              <img src="/my-pro/Public/ImgResources/Admin/img/demo/demo-image3.jpg" alt="demo-image"/></div>
           </div>
         </div>
       </div>
@@ -432,35 +432,35 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 
 <!--end-Footer-part-->
  
-<script src="/myframework/Public/JsResources/Jquery/jquery.min.js"></script> 
-<script src="/myframework/Public/JsResources/Jquery/jquery.ui.custom.js"></script> 
-<script src="/myframework/Public/JsResources/Bootstrap/bootstrap.min.js"></script> 
-<script src="/myframework/Public/JsResources/Jquery/jquery.uniform.js"></script> 
-<script src="/myframework/Public/JsResources/Jquery/jquery.dataTables.min.js"></script> 
-<script src="/myframework/Public/JsResources/Matrix/matrix.js"></script> 
-<script src="/myframework/Public/JsResources/Matrix/matrix.tables.js"></script> 
- <?php switch($PAGE_FROM): case "Index": ?><script src="/myframework/Public/JsResources/excanvas.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.flot.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.flot.resize.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.peity.min.js"></script> 
-		<script src="/myframework/Public/JsResources/fullcalendar.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.dashboard.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/jquery.gritter.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.interface.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.chat.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.validate.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/Jquery.wizard.js"></script> 
-		<script src="/myframework/Public/JsResources/select2.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.popover.js"></script><?php break;?>
- 	<?php case "List": ?><script src="/myframework/Public/JsResources/select2.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.interface.js"></script> 
-		<script src="/myframework/Public/JsResources/list-opration.js"></script><?php break;?>
- 	<?php case "Add": ?><script src="/myframework/Public/JsResources/Jquery/jquery.validate.js"></script> 
- 		<script src="/myframework/Public/JsResources/select2.min.js"></script> 
- 		<script src="/myframework/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
- 		<script src="/myframework/Public/JsResources/Matrix/matrix.form_common.js"></script> 
-		<script src="/myframework/Public/JsResources/iconSelect.js"></script><?php break; endswitch;?>
+<script src="/my-pro/Public/JsResources/Jquery/jquery.min.js"></script> 
+<script src="/my-pro/Public/JsResources/Jquery/jquery.ui.custom.js"></script> 
+<script src="/my-pro/Public/JsResources/Bootstrap/bootstrap.min.js"></script> 
+<script src="/my-pro/Public/JsResources/Jquery/jquery.uniform.js"></script> 
+<script src="/my-pro/Public/JsResources/Jquery/jquery.dataTables.min.js"></script> 
+<script src="/my-pro/Public/JsResources/Matrix/matrix.js"></script> 
+<script src="/my-pro/Public/JsResources/Matrix/matrix.tables.js"></script> 
+ <?php switch($PAGE_FROM): case "Index": ?><script src="/my-pro/Public/JsResources/excanvas.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.flot.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.flot.resize.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.peity.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/fullcalendar.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.dashboard.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/jquery.gritter.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.interface.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.chat.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.validate.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/Jquery.wizard.js"></script> 
+		<script src="/my-pro/Public/JsResources/select2.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.popover.js"></script><?php break;?>
+ 	<?php case "List": ?><script src="/my-pro/Public/JsResources/select2.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.interface.js"></script> 
+		<script src="/my-pro/Public/JsResources/list-opration.js"></script><?php break;?>
+ 	<?php case "Add": ?><script src="/my-pro/Public/JsResources/Jquery/jquery.validate.js"></script> 
+ 		<script src="/my-pro/Public/JsResources/select2.min.js"></script> 
+ 		<script src="/my-pro/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
+ 		<script src="/my-pro/Public/JsResources/Matrix/matrix.form_common.js"></script> 
+		<script src="/my-pro/Public/JsResources/iconSelect.js"></script><?php break; endswitch;?>
  <?php if($PAGE_FROM == Index): ?><script type="text/javascript">
 	  // This function is called from the pop-up menus to transfer to
 	  // a different page. Ignore if the value returned is a null string:

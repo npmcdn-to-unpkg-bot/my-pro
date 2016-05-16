@@ -7,29 +7,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- 引入样式表 -->
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Bootstrap/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Bootstrap/bootstrap-responsive.min.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Matrix/matrix-style.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Matrix/matrix-media.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Bootstrap/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Matrix/matrix-style.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Matrix/matrix-media.css" />
 
-<?php switch($PAGE_FROM): case "Index": ?><link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/fullcalendar.css" />
-		<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Matrix/matrix-media.css/jquery.gritter.css" /><?php break;?>
-	<?php case "List": case "Add": ?><link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/uniform.css" />
-		<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/select2.css" /><?php break; endswitch;?>
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/font-awesome-4.4.0/css/font-awesome.css" />
+<?php switch($PAGE_FROM): case "Index": ?><link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/fullcalendar.css" />
+		<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Matrix/matrix-media.css/jquery.gritter.css" /><?php break;?>
+	<?php case "List": case "Add": ?><link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/uniform.css" />
+		<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/select2.css" /><?php break; endswitch;?>
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/font-awesome-4.4.0/css/font-awesome.css" />
 <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'> -->
-<?php if($EDIT): ?><script type="text/javascript" charset="utf-8" src="/myframework/Public/uedit/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/myframework/Public/uedit/ueditor.all.min.js"> </script>
-    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
-    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
-    <script type="text/javascript" charset="utf-8" src="/myframework/Public/uedit/lang/zh-cn/zh-cn.js"></script><?php endif; ?>
+
 <!-- 代码着色器初始化 -->
-<?php if($CODE == true): ?><link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/code/shCoreDefault.css" />
-	<script type="text/javascript" src="/myframework/Public/JsResources/code/shCore.js"></script>
-	<script type="text/javascript" src="/myframework/Public/JsResources/code/shBrushXml.js"></script>
+<?php if($CODE == true): ?><link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/code/shCoreDefault.css" />
+	<script type="text/javascript" src="/my-pro/Public/JsResources/code/shCore.js"></script>
+	<script type="text/javascript" src="/my-pro/Public/JsResources/code/shBrushXml.js"></script>
 	<script type="text/javascript">SyntaxHighlighter.all();</script><?php endif; ?>
 <script type="text/javascript">
-var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
+var urlHead="/my-pro/<?php echo (CONTROLLER_NAME); ?>/";
 </script>
 
 </head>
@@ -37,22 +33,23 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 <!--Header-part-->
 <div id="header">
 
-  <h1><a href="dashboard.html">YY_BG</a></h1>
+  <h1><a href="dashboard.html">车维汇汽车服务平台-接口发布管理</a></h1>
 </div>
 <!--close-Header-part--> 
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
-    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="fa fa-user"></i>  <span class="text">欢迎你 <?php echo (session('adminName')); ?></span><b class="caret"></b></a>
-      <ul class="dropdown-menu">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="fa fa-user"></i>  <span class="text">欢迎使用</span><b class="caret"></b></a>
+      <!-- <ul class="dropdown-menu">
         <li><a href="#"><i class="fa fa-user"></i> My Profile</a></li>
         <li class="divider"></li>
         <li><a href="#"><i class="fa fa-check"></i> My Tasks</a></li>
         <li class="divider"></li>
         <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-      </ul>
+      </ul> -->
     </li>
-    <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+    <li  class="dropdown" id="profile-messages" ><a title=""  href="http://www.bejson.com/"  target="_blank"><i class="fa fa-retweet"></i>  <span class="text">Json在线解析工具</span><b class="caret"></b></a></li>
+    <!-- <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><a class="sAdd" title="" href="#"><i class="fa-plus"></i> new message</a></li>
         <li class="divider"></li>
@@ -64,7 +61,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
       </ul>
     </li>
     <li class=""><a title="" href="#setting"  data-toggle="modal"><i class="fa fa-cog"></i> <span class="text">密码设置</span></a></li>
-    <li class=""><a title="" href="/myframework/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li>
+    <li class=""><a title="" href="/my-pro/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li> -->
   </ul>
 </div>
 <!--close-top-Header-menu-->
@@ -114,7 +111,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 						<h3>密码设置</h3>
 					</div>
 					<div class="modal-body">
-						<form action="/myframework/Admins/setPsw/" method="post" id="setPswForm" class="form-horizontal">
+						<form action="/my-pro/Admins/setPsw/" method="post" id="setPswForm" class="form-horizontal">
 
 							<div class="control-group">
 								<label class="control-label">旧密码</label>
@@ -174,11 +171,11 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 							</tr>
 							<tr>
 								<td>正式地址</td>
-								<td><?php echo ($intData["url"]); ?></td>
+								<td><?php echo C('URL_PREFIX'); echo ($intData["url"]); ?></td>
 							</tr>
 							<tr>
 								<td>测试地址</td>
-								<td><?php echo ($intData["test_url"]); ?></td>
+								<td><?php echo C('TEST_URL_PREFIX'); echo ($intData["test_url"]); ?></td>
 							</tr>
 							<tr>
 								<td>备注</td>
@@ -196,111 +193,140 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 					</table>
 				</div>
 			</div>
-
+			<hr>
 			<div class="widget-box">
 				<div class="widget-title">
 					<span class="icon"> <i class="fa fa-exchange"></i>
 					</span>
-					<h5>Parameters List</h5>
+					<h5>传入参数(<?php echo count($params['paramIn']);?>)</h5>
 					<ul class="nav nav-tabs">
-						<li class="active"><a data-toggle="tab" href="#paramIn">传入参数(<?php echo count($params['paramIn']);?>)</a></li>
-						<li><a data-toggle="tab" href="#paramOut">返回参数(<?php echo count($params['paramOut']);?>)</a></li>
-						<li><a data-toggle="tab" href="#code">Code(<?php echo count($codes);?>)</a></li>
+						<li class="active"><a data-toggle="tab" href="#headerParam">Header参数</a></li>
+						<li><a data-toggle="tab" href="#urlParam">Url参数</a></li>
 					</ul>
 				</div>
 				<div class="widget-content tab-content nopadding">
-					<div id="paramIn" class="tab-pane active">
+					<div id="headerParam" class="tab-pane active">
 						<table class="table table-bordered">
 							<thead>
 								<tr>
 									<th width="1%">M</th>
 									<th width="10%">名称</th>
 									<th width="5%">类型</th>
-									<th width="5%">位置</th>
 								</tr>
 							</thead>
 							<tbody>
-								<?php if(is_array($params['paramIn'])): $i = 0; $__LIST__ = $params['paramIn'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$dataIn): $mod = ($i % 2 );++$i;?><tr>
-									<td rowspan="2"><?php if($dataIn["must"] == '00A'): ?><span class="icon">
-											<i class="fa fa-star"></i>
-										</span><?php endif; ?>
-										<?php if($dataIn["must"] == '00B'): ?><span class="icon">
-											<i class="fa fa-star-o"></i>
-										</span><?php endif; ?>
-									</td>
+								<?php if(is_array($params['paramIn'])): $i = 0; $__LIST__ = $params['paramIn'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$dataIn): $mod = ($i % 2 );++$i; if($dataIn["param_loc"] == '00A'): ?><tr>
+									<td rowspan="2"><?php if($dataIn["must"] == '00A'): ?><span
+											class="icon"> <i class="fa fa-star"></i>
+										</span><?php endif; ?> <?php if($dataIn["must"] == '00B'): ?><span
+											class="icon"> <i class="fa fa-star-o"></i>
+										</span><?php endif; ?></td>
 									<td><?php echo ($dataIn["name"]); ?></td>
-									<td>
-										<?php if($dataIn["param_type"] == '00A'): ?>String<?php endif; ?>
-										<?php if($dataIn["param_type"] == '00B'): ?>Number<?php endif; ?>
-										<?php if($dataIn["param_type"] == '00C'): ?>Json<?php endif; ?>
-									</td>
-									<td>
-										<?php if($dataIn["param_loc"] == '00A'): ?>Header参数<?php endif; ?>
-										<?php if($dataIn["param_loc"] == '00B'): ?>Url参数<?php endif; ?>
-									</td>
+									<td><?php if($dataIn["param_type"] == '00A'): ?>String<?php endif; ?> <?php if($dataIn["param_type"] == '00B'): ?>Number<?php endif; ?> <?php if($dataIn["param_type"] == '00C'): ?>Json<?php endif; ?></td>
 								</tr>
-								<tr ><td colspan="3"><?php echo ($dataIn["discription"]); ?></td></tr><?php endforeach; endif; else: echo "" ;endif; ?>
+								<tr>
+									<td colspan="2"><?php echo ($dataIn["discription"]); ?></td>
+								</tr><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 							</tbody>
 						</table>
 					</div>
-					<div id="paramOut" class="tab-pane">
+
+					<div id="urlParam" class="tab-pane">
 						<table class="table table-bordered">
 							<thead>
 								<tr>
 									<th width="1%">M</th>
 									<th width="10%">名称</th>
 									<th width="5%">类型</th>
-									<th width="5%">位置</th>
 								</tr>
 							</thead>
 							<tbody>
-								<?php if(is_array($params['paramOut'])): $i = 0; $__LIST__ = $params['paramOut'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$dataIn): $mod = ($i % 2 );++$i;?><tr>
-									<td rowspan="2"><?php if($dataIn["must"] == '00A'): ?><span class="icon">
-											<i class="fa fa-star"></i>
-										</span><?php endif; ?>
-										<?php if($dataIn["must"] == '00B'): ?><span class="icon">
-											<i class="fa fa-star-o"></i>
-										</span><?php endif; ?>
-									</td>
+								<?php if(is_array($params['paramIn'])): $i = 0; $__LIST__ = $params['paramIn'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$dataIn): $mod = ($i % 2 );++$i; if($dataIn["param_loc"] == '00B'): ?><tr>
+									<td rowspan="2"><?php if($dataIn["must"] == '00A'): ?><span
+											class="icon"> <i class="fa fa-star"></i>
+										</span><?php endif; ?> <?php if($dataIn["must"] == '00B'): ?><span
+											class="icon"> <i class="fa fa-star-o"></i>
+										</span><?php endif; ?></td>
 									<td><?php echo ($dataIn["name"]); ?></td>
-									<td>
-										<?php if($dataIn["param_type"] == '00A'): ?>String<?php endif; ?>
-										<?php if($dataIn["param_type"] == '00B'): ?>Number<?php endif; ?>
-										<?php if($dataIn["param_type"] == '00C'): ?>Json<?php endif; ?>
-									</td>
-									<td>
-										<?php if($dataIn["param_loc"] == '00A'): ?>Header参数<?php endif; ?>
-										<?php if($dataIn["param_loc"] == '00B'): ?>Url参数<?php endif; ?>
-									</td>
+									<td><?php if($dataIn["param_type"] == '00A'): ?>String<?php endif; ?> <?php if($dataIn["param_type"] == '00B'): ?>Number<?php endif; ?> <?php if($dataIn["param_type"] == '00C'): ?>Json<?php endif; ?></td>
 								</tr>
-								<tr ><td colspan="3"><?php echo ($dataIn["discription"]); ?></td></tr><?php endforeach; endif; else: echo "" ;endif; ?>
-							</tbody>
-						</table>
-					</div>
-					<div id="code" class="tab-pane">
-						<table class="table table-bordered">
-							<thead>
 								<tr>
-									<th width="5%">Code</th>
-									<th>值</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php if(is_array($codes)): $i = 0; $__LIST__ = $codes;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$code): $mod = ($i % 2 );++$i;?><tr>
-										<td rowspan="2"><?php echo ($code["code_name"]); ?></td>
-										<td>Msg:<?php echo ($code["code_msg"]); ?></td>
-									</tr>
-									<tr>
-										<td>描述:<?php echo ($code["discription"]); ?></td>
-									</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+									<td colspan="2"><?php echo ($dataIn["discription"]); ?></td>
+								</tr><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
+
+
+			<div class="widget-box">
+				<div class="widget-title">
+					<span class="icon"> <i class="fa fa-exchange"></i>
+					</span>
+					<h5>返回参数(<?php echo count($params['paramOut']);?>)</h5>
+				</div>
+				<div class="widget-content nopadding">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th width="1%">M</th>
+								<th width="10%">名称</th>
+								<th width="5%">类型</th>
+								<th width="5%">位置</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php if(is_array($params['paramOut'])): $i = 0; $__LIST__ = $params['paramOut'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$dataIn): $mod = ($i % 2 );++$i;?><tr>
+								<td rowspan="2"><?php if($dataIn["must"] == '00A'): ?><span
+										class="icon"> <i class="fa fa-star"></i>
+									</span><?php endif; ?> <?php if($dataIn["must"] == '00B'): ?><span
+										class="icon"> <i class="fa fa-star-o"></i>
+									</span><?php endif; ?></td>
+								<td><?php echo ($dataIn["name"]); ?></td>
+								<td><?php if($dataIn["param_type"] == '00A'): ?>String<?php endif; ?> <?php if($dataIn["param_type"] == '00B'): ?>Number<?php endif; ?> <?php if($dataIn["param_type"] == '00C'): ?>Json<?php endif; ?></td>
+								<td><?php if($dataIn["param_loc"] == '00A'): ?>Header参数<?php endif; ?> <?php if($dataIn["param_loc"] == '00B'): ?>Url参数<?php endif; ?></td>
+							</tr>
+							<tr>
+								<td colspan="3"><?php echo ($dataIn["discription"]); ?></td>
+							</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+			<div class="widget-box">
+				<div class="widget-title">
+					<span class="icon"> <i class="fa fa-exchange"></i>
+					</span>
+					<h5>Code(<?php echo count($codes);?>)</h5>
+				</div>
+				<div class="widget-content nopadding">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th width="5%">Code</th>
+								<th>值</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php if(is_array($codes)): $i = 0; $__LIST__ = $codes;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$code): $mod = ($i % 2 );++$i;?><tr>
+								<td rowspan="2"><?php echo ($code["code_name"]); ?></td>
+								<td>Msg:<?php echo ($code["code_msg"]); ?></td>
+							</tr>
+							<tr>
+								<td>描述:<?php echo ($code["discription"]); ?></td>
+							</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<hr>
+
+
 		</div>
 		<div class="span5">
-			
 			<div class="widget-box">
 				<div class="widget-title">
 					<ul class="nav nav-tabs">
@@ -309,19 +335,53 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 					</ul>
 				</div>
 				<div class="widget-content tab-content">
-					<div id="demo_in" class="tab-pane active">
-						<?php echo ($intData["demo_in"]); ?>
-					</div>
-					<div id="demo_out" class="tab-pane">
-						<?php echo ($intData["demo_out"]); ?>
-					</div>
+					<div id="demo_in" class="tab-pane active"><?php echo ($intData["demo_in"]); ?></div>
+					<div id="demo_out" class="tab-pane"><?php echo ($intData["demo_out"]); ?></div>
 				</div>
 			</div>
+	<!-- 
+			<div class="widget-box">
+				<div class="widget-title">
+					<span class="icon"> <i class="fa fa-exchange"></i>
+					</span>
+					<h5>模拟调用（模拟调用测试地址）</h5>
+				</div>
+				<div class="widget-content nopadding">
+					<form action="#" method="get" class="form-horizontal">
+						<div class="control-group" style="color: red;font-weight: bolder;">
+							Header参数
+						</div>
+						<?php if(is_array($params['paramIn'])): $i = 0; $__LIST__ = $params['paramIn'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$param): $mod = ($i % 2 );++$i; if($param['param_loc'] == '00A'): ?><div class="control-group">
+									<label class="control-label fl" <?php if($param["must"] == '00A'): ?>style="color: red;font-weight: bolder;"<?php endif; ?>><?php echo ($param["name"]); if($param["must"] == '00A'): ?>*<?php endif; ?></label>
+									<div class="controls">
+										<input type="text" class="span11 testInvoke" placeholder=""
+											name="<?php echo ($param["name"]); ?>" />
+									</div>
+								</div><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+
+						<div class="control-group" style="color: red;font-weight: bolder;">
+							Url参数
+						</div>
+						<?php if(is_array($params['paramIn'])): $i = 0; $__LIST__ = $params['paramIn'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$param): $mod = ($i % 2 );++$i; if($param['param_loc'] == '00B'): ?><div class="control-group">
+									<label class="control-label fl"><?php echo ($param["name"]); if($param["must"] == '00A'): ?>*<?php endif; ?></label>
+									<div class="controls">
+										<input type="text" class="span11 testInvoke" placeholder=""
+											name="<?php echo ($param["name"]); ?>" />
+									</div>
+								</div><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+						
+						<div class="form-actions">
+							<a class="btn btn-success" onclick="testInvoke();">发起请求</a>
+						</div>
+					</form>
+				</div>
+			</div>
+			-->
 		</div>
 	</div>
 	<hr>
-	
 </div>
+
 </div>
 
 <!--end-main-container-part-->
@@ -333,35 +393,35 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 
 <!--end-Footer-part-->
  
-<script src="/myframework/Public/JsResources/Jquery/jquery.min.js"></script> 
-<script src="/myframework/Public/JsResources/Jquery/jquery.ui.custom.js"></script> 
-<script src="/myframework/Public/JsResources/Bootstrap/bootstrap.min.js"></script> 
-<script src="/myframework/Public/JsResources/Jquery/jquery.uniform.js"></script> 
-<script src="/myframework/Public/JsResources/Jquery/jquery.dataTables.min.js"></script> 
-<script src="/myframework/Public/JsResources/Matrix/matrix.js"></script> 
-<script src="/myframework/Public/JsResources/Matrix/matrix.tables.js"></script> 
- <?php switch($PAGE_FROM): case "Index": ?><script src="/myframework/Public/JsResources/excanvas.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.flot.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.flot.resize.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.peity.min.js"></script> 
-		<script src="/myframework/Public/JsResources/fullcalendar.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.dashboard.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/jquery.gritter.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.interface.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.chat.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.validate.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/Jquery.wizard.js"></script> 
-		<script src="/myframework/Public/JsResources/select2.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.popover.js"></script><?php break;?>
- 	<?php case "List": ?><script src="/myframework/Public/JsResources/select2.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.interface.js"></script> 
-		<script src="/myframework/Public/JsResources/list-opration.js"></script><?php break;?>
- 	<?php case "Add": ?><script src="/myframework/Public/JsResources/Jquery/jquery.validate.js"></script> 
- 		<script src="/myframework/Public/JsResources/select2.min.js"></script> 
- 		<script src="/myframework/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
- 		<script src="/myframework/Public/JsResources/Matrix/matrix.form_common.js"></script> 
-		<script src="/myframework/Public/JsResources/iconSelect.js"></script><?php break; endswitch;?>
+<script src="/my-pro/Public/JsResources/Jquery/jquery.min.js"></script> 
+<script src="/my-pro/Public/JsResources/Jquery/jquery.ui.custom.js"></script> 
+<script src="/my-pro/Public/JsResources/Bootstrap/bootstrap.min.js"></script> 
+<script src="/my-pro/Public/JsResources/Jquery/jquery.uniform.js"></script> 
+<script src="/my-pro/Public/JsResources/Jquery/jquery.dataTables.min.js"></script> 
+<script src="/my-pro/Public/JsResources/Matrix/matrix.js"></script> 
+<script src="/my-pro/Public/JsResources/Matrix/matrix.tables.js"></script> 
+ <?php switch($PAGE_FROM): case "Index": ?><script src="/my-pro/Public/JsResources/excanvas.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.flot.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.flot.resize.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.peity.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/fullcalendar.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.dashboard.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/jquery.gritter.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.interface.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.chat.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.validate.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/Jquery.wizard.js"></script> 
+		<script src="/my-pro/Public/JsResources/select2.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.popover.js"></script><?php break;?>
+ 	<?php case "List": ?><script src="/my-pro/Public/JsResources/select2.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.interface.js"></script> 
+		<script src="/my-pro/Public/JsResources/list-opration.js"></script><?php break;?>
+ 	<?php case "Add": ?><script src="/my-pro/Public/JsResources/Jquery/jquery.validate.js"></script> 
+ 		<script src="/my-pro/Public/JsResources/select2.min.js"></script> 
+ 		<script src="/my-pro/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
+ 		<script src="/my-pro/Public/JsResources/Matrix/matrix.form_common.js"></script> 
+		<script src="/my-pro/Public/JsResources/iconSelect.js"></script><?php break; endswitch;?>
  <?php if($PAGE_FROM == Index): ?><script type="text/javascript">
 	  // This function is called from the pop-up menus to transfer to
 	  // a different page. Ignore if the value returned is a null string:

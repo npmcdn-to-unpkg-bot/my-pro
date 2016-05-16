@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-include_path=0;/MyFramework\u00051;/Web/MyFramework/ThinkPHP\u00051;/Web/MyFramework/PhpConsole
+include_path=1;/Web/MyFramework/ThinkPHP\u00051;/Web/MyFramework/PhpConsole\u00050;/my-pro

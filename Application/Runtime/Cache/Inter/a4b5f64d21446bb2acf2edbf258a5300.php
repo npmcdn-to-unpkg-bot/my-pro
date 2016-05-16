@@ -7,29 +7,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- 引入样式表 -->
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Bootstrap/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Bootstrap/bootstrap-responsive.min.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Matrix/matrix-style.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Matrix/matrix-media.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Bootstrap/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Matrix/matrix-style.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Matrix/matrix-media.css" />
 
-<?php switch($PAGE_FROM): case "Index": ?><link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/fullcalendar.css" />
-		<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/Matrix/matrix-media.css/jquery.gritter.css" /><?php break;?>
-	<?php case "List": case "Add": ?><link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/uniform.css" />
-		<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/select2.css" /><?php break; endswitch;?>
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/font-awesome-4.4.0/css/font-awesome.css" />
+<?php switch($PAGE_FROM): case "Index": ?><link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/fullcalendar.css" />
+		<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/Matrix/matrix-media.css/jquery.gritter.css" /><?php break;?>
+	<?php case "List": case "Add": ?><link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/uniform.css" />
+		<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/select2.css" /><?php break; endswitch;?>
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/font-awesome-4.4.0/css/font-awesome.css" />
 <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'> -->
-<?php if($EDIT): ?><script type="text/javascript" charset="utf-8" src="/myframework/Public/uedit/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/myframework/Public/uedit/ueditor.all.min.js"> </script>
-    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
-    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
-    <script type="text/javascript" charset="utf-8" src="/myframework/Public/uedit/lang/zh-cn/zh-cn.js"></script><?php endif; ?>
+
 <!-- 代码着色器初始化 -->
-<?php if($CODE == true): ?><link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/code/shCoreDefault.css" />
-	<script type="text/javascript" src="/myframework/Public/JsResources/code/shCore.js"></script>
-	<script type="text/javascript" src="/myframework/Public/JsResources/code/shBrushXml.js"></script>
+<?php if($CODE == true): ?><link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/code/shCoreDefault.css" />
+	<script type="text/javascript" src="/my-pro/Public/JsResources/code/shCore.js"></script>
+	<script type="text/javascript" src="/my-pro/Public/JsResources/code/shBrushXml.js"></script>
 	<script type="text/javascript">SyntaxHighlighter.all();</script><?php endif; ?>
 <script type="text/javascript">
-var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
+var urlHead="/my-pro/<?php echo (CONTROLLER_NAME); ?>/";
 </script>
 
 </head>
@@ -37,22 +33,23 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 <!--Header-part-->
 <div id="header">
 
-  <h1><a href="dashboard.html">YY_BG</a></h1>
+  <h1><a href="dashboard.html">车维汇汽车服务平台-接口发布管理</a></h1>
 </div>
 <!--close-Header-part--> 
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
-    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="fa fa-user"></i>  <span class="text">欢迎你 <?php echo (session('adminName')); ?></span><b class="caret"></b></a>
-      <ul class="dropdown-menu">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="fa fa-user"></i>  <span class="text">欢迎使用</span><b class="caret"></b></a>
+      <!-- <ul class="dropdown-menu">
         <li><a href="#"><i class="fa fa-user"></i> My Profile</a></li>
         <li class="divider"></li>
         <li><a href="#"><i class="fa fa-check"></i> My Tasks</a></li>
         <li class="divider"></li>
         <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-      </ul>
+      </ul> -->
     </li>
-    <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+    <li  class="dropdown" id="profile-messages" ><a title=""  href="http://www.bejson.com/"  target="_blank"><i class="fa fa-retweet"></i>  <span class="text">Json在线解析工具</span><b class="caret"></b></a></li>
+    <!-- <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><a class="sAdd" title="" href="#"><i class="fa-plus"></i> new message</a></li>
         <li class="divider"></li>
@@ -64,7 +61,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
       </ul>
     </li>
     <li class=""><a title="" href="#setting"  data-toggle="modal"><i class="fa fa-cog"></i> <span class="text">密码设置</span></a></li>
-    <li class=""><a title="" href="/myframework/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li>
+    <li class=""><a title="" href="/my-pro/index/logout"><i class="fa fa-share-alt"></i> <span class="text">安全退出</span></a></li> -->
   </ul>
 </div>
 <!--close-top-Header-menu-->
@@ -114,7 +111,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 						<h3>密码设置</h3>
 					</div>
 					<div class="modal-body">
-						<form action="/myframework/Admins/setPsw/" method="post" id="setPswForm" class="form-horizontal">
+						<form action="/my-pro/Admins/setPsw/" method="post" id="setPswForm" class="form-horizontal">
 
 							<div class="control-group">
 								<label class="control-label">旧密码</label>
@@ -167,8 +164,8 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 					<strong>调用方式</strong>:<?php if($item["int_method"] == '00A'): ?>GET方式<?php else: ?>POST方式<?php endif; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<strong>所属分类</strong>:<?php echo ($item["category_name"]); ?>
 					</span>
-					<span onclick="copy_code('<?php echo ($item["url"]); ?>');"><strong>生产环境地址</strong>:<?php echo ($item["url"]); ?><i class="fa fa-copy"></i></span>
-					<span><strong>测试环境地址</strong>:<?php echo ($item["test_url"]); ?><i class="fa fa-copy"></i></span>
+					<span onclick="copy_code('<?php echo ($item["url"]); ?>');"><strong>生产环境地址</strong>:<?php echo C('URL_PREFIX'); echo ($item["url"]); ?><i class="fa fa-copy"></i></span>
+					<span><strong>测试环境地址</strong>:<?php echo C('TEST_URL_PREFIX'); echo ($item["test_url"]); ?><i class="fa fa-copy"></i></span>
 				</div>
 				<div class="update-date">
 					<span class="update-day"><?php echo date("d" , strtotime($item['update_time'])); ?></span>
@@ -199,7 +196,7 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
               document.body.appendChild(divholder);
             }
             document.getElementById(flashcopier).innerHTML = '';
-            var divinfo = '<embed src="/myframework/Public/FileResources/_clipboard.swf" FlashVars="clipboard='+encodeURIComponent(copyText)+'" width="0" height="0" type="application/x-shockwave-flash"></embed>';
+            var divinfo = '<embed src="/my-pro/Public/FileResources/_clipboard.swf" FlashVars="clipboard='+encodeURIComponent(copyText)+'" width="0" height="0" type="application/x-shockwave-flash"></embed>';
             document.getElementById(flashcopier).innerHTML = divinfo;
         }
       alert('copy成功！');
@@ -218,35 +215,35 @@ var urlHead="/myframework/<?php echo (CONTROLLER_NAME); ?>/";
 
 <!--end-Footer-part-->
  
-<script src="/myframework/Public/JsResources/Jquery/jquery.min.js"></script> 
-<script src="/myframework/Public/JsResources/Jquery/jquery.ui.custom.js"></script> 
-<script src="/myframework/Public/JsResources/Bootstrap/bootstrap.min.js"></script> 
-<script src="/myframework/Public/JsResources/Jquery/jquery.uniform.js"></script> 
-<script src="/myframework/Public/JsResources/Jquery/jquery.dataTables.min.js"></script> 
-<script src="/myframework/Public/JsResources/Matrix/matrix.js"></script> 
-<script src="/myframework/Public/JsResources/Matrix/matrix.tables.js"></script> 
- <?php switch($PAGE_FROM): case "Index": ?><script src="/myframework/Public/JsResources/excanvas.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.flot.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.flot.resize.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.peity.min.js"></script> 
-		<script src="/myframework/Public/JsResources/fullcalendar.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.dashboard.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/jquery.gritter.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.interface.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.chat.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/jquery.validate.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
-		<script src="/myframework/Public/JsResources/Jquery/Jquery.wizard.js"></script> 
-		<script src="/myframework/Public/JsResources/select2.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.popover.js"></script><?php break;?>
- 	<?php case "List": ?><script src="/myframework/Public/JsResources/select2.min.js"></script> 
-		<script src="/myframework/Public/JsResources/Matrix/matrix.interface.js"></script> 
-		<script src="/myframework/Public/JsResources/list-opration.js"></script><?php break;?>
- 	<?php case "Add": ?><script src="/myframework/Public/JsResources/Jquery/jquery.validate.js"></script> 
- 		<script src="/myframework/Public/JsResources/select2.min.js"></script> 
- 		<script src="/myframework/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
- 		<script src="/myframework/Public/JsResources/Matrix/matrix.form_common.js"></script> 
-		<script src="/myframework/Public/JsResources/iconSelect.js"></script><?php break; endswitch;?>
+<script src="/my-pro/Public/JsResources/Jquery/jquery.min.js"></script> 
+<script src="/my-pro/Public/JsResources/Jquery/jquery.ui.custom.js"></script> 
+<script src="/my-pro/Public/JsResources/Bootstrap/bootstrap.min.js"></script> 
+<script src="/my-pro/Public/JsResources/Jquery/jquery.uniform.js"></script> 
+<script src="/my-pro/Public/JsResources/Jquery/jquery.dataTables.min.js"></script> 
+<script src="/my-pro/Public/JsResources/Matrix/matrix.js"></script> 
+<script src="/my-pro/Public/JsResources/Matrix/matrix.tables.js"></script> 
+ <?php switch($PAGE_FROM): case "Index": ?><script src="/my-pro/Public/JsResources/excanvas.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.flot.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.flot.resize.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.peity.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/fullcalendar.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.dashboard.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/jquery.gritter.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.interface.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.chat.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/jquery.validate.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
+		<script src="/my-pro/Public/JsResources/Jquery/Jquery.wizard.js"></script> 
+		<script src="/my-pro/Public/JsResources/select2.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.popover.js"></script><?php break;?>
+ 	<?php case "List": ?><script src="/my-pro/Public/JsResources/select2.min.js"></script> 
+		<script src="/my-pro/Public/JsResources/Matrix/matrix.interface.js"></script> 
+		<script src="/my-pro/Public/JsResources/list-opration.js"></script><?php break;?>
+ 	<?php case "Add": ?><script src="/my-pro/Public/JsResources/Jquery/jquery.validate.js"></script> 
+ 		<script src="/my-pro/Public/JsResources/select2.min.js"></script> 
+ 		<script src="/my-pro/Public/JsResources/Matrix/matrix.form_validation.js"></script> 
+ 		<script src="/my-pro/Public/JsResources/Matrix/matrix.form_common.js"></script> 
+		<script src="/my-pro/Public/JsResources/iconSelect.js"></script><?php break; endswitch;?>
  <?php if($PAGE_FROM == Index): ?><script type="text/javascript">
 	  // This function is called from the pop-up menus to transfer to
 	  // a different page. Ignore if the value returned is a null string:

@@ -7,12 +7,12 @@
 <meta name="Designer" content="PremiumPixels.com">
 <meta name="Author" content="$hekh@r d-Ziner, CSSJUNTION.com">
 
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/login/reset.css" />
-<link rel="stylesheet" type="text/css" href="/myframework/Public/StyleResources/login/structure.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/login/reset.css" />
+<link rel="stylesheet" type="text/css" href="/my-pro/Public/StyleResources/login/structure.css" />
 </head>
 
 <body>
-<form class="box login" method="post" action="/myframework/Admin/Index/adminValidate">
+<form class="box login" method="post" action="/my-pro/Admin/Index/adminValidate">
 	<fieldset class="boxBody">
 	  <label>登录帐号</label>
 	  <input type="text" tabindex="1" placeholder="管理员帐号" name="account" required>

@@ -49,6 +49,7 @@ class TestController extends InterfaceController{
 			$response['msg'] = C('SUCCESS_CODE.MSG');
 			$response['content'] = "咱们的接口连通性OK了!";
 			$response['timestamp'] = time();
+			header("Content-type:text/html; charset=utf-8");
 			echo json_encode($response);
 		}
 		catch(Exception $ex){
