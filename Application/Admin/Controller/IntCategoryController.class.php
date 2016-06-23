@@ -139,7 +139,7 @@ class IntCategoryController extends CommonController{
 			
 			$data ['SORT'] = I( 'sort' );
 			$data ['STATE'] = "00A";
-			$data ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$data ['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 			$data['DISCRIPTION'] = $this -> trimAndHtmlSpecialChars(I('discription'));
 			$data ['NAME'] = $this -> trimAndHtmlSpecialChars(I( 'category_name' ));
 			if ("none" == I ( 'pid' )) {

@@ -71,12 +71,12 @@ class ErrorCodeModel extends CommonModel{
 			$data['CODE_MSG'] = trim(htmlspecialchars($i['ecMsg']));
 			$data['SORT'] = $i['ecSort'];
 			$data['DISCRIPTION'] = trim(htmlspecialchars($i['discription']));
-			$data['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$data['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 			$data['STATE'] = '00A';
 			$data['YYBG_INT_INFO_ID'] = $i['intId'];
 			
 			$intData['ID'] = $i['intId'];
-			$intData['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$intData['UPDATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 			
 			$this->intModel->save($intData);
 			
@@ -140,7 +140,7 @@ class ErrorCodeModel extends CommonModel{
 			$data['DISCRIPTION'] = trim(htmlspecialchars($i['discription']));
 			
 			$intData['ID'] = $i['intId'];
-			$intData['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$intData['UPDATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 				
 			$this->intModel->save($intData);
 				
@@ -166,7 +166,7 @@ class ErrorCodeModel extends CommonModel{
 			$data['ID'] = $id;
 			$data['STATE'] = '00B';
 			$intData['ID'] = $intId;
-			$intData['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$intData['UPDATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 				
 			$this->intModel->save($intData);
 			if(false === $this->save($data))

@@ -53,7 +53,7 @@ class ResourcesController extends CommonController {
 				$data ['MENU_ICON'] = (NULL == I( 'icon' ) || "" == I('icon'))?NULL:I('icon');
 				$data ['STATE'] = "00A";
 				$data ['URI'] = I( 'uri' );
-				$data ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+				$data ['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 				$data ['MENU_NAME'] = I( 'menu_name' );
 				if ("none" == I ( 'pid' )) {
 					$data ['PID'] = NULL;

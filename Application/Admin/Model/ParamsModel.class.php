@@ -64,10 +64,10 @@ class ParamsModel extends CommonModel{
 			$data['STATE'] = '00A';
 			$data['DISCRIPTION'] = trim(htmlspecialchars($i['discription']));
 			$data['JSON_DISCRIPTION'] = trim(htmlspecialchars($i['paramInJsonDis']));
-			$data ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$data ['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 			
 			$intData['ID'] = $i['intId'];
-			$intData['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$intData['UPDATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 			return ($this -> add($data) && $this->intModel -> save($intData));			
 		}
 		catch(Exception $ex){
@@ -87,7 +87,7 @@ class ParamsModel extends CommonModel{
 			$data['JSON_DISCRIPTION'] = trim(htmlspecialchars($i['paramInJsonDis']));
 			
 			$intData['ID'] = $i['intId'];
-			$intData['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$intData['UPDATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 			return ($this -> save($data) && $this->intModel -> save($intData));
 		}
 		catch(Exception $ex){
@@ -109,7 +109,7 @@ class ParamsModel extends CommonModel{
 			
 						
 			$intData['ID'] = $intId;
-			$intData['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$intData['UPDATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 			$this->intModel -> save($intData);
 			
 			if(false !== $this->save($data))

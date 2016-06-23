@@ -25,6 +25,8 @@ return array(
 				'__IMG_RES__' => __ROOT__.'/Public' .'/ImgResources', // 配置所用图片资源位置
 				'__FILE_RES__' => __ROOT__.'/Public' .'/FileResources', // 配置所用图片资源位置
 				'__UEDIT__' => __ROOT__.'/Public' .'/uedit', // 配置Uedit位置
+				'__UPLOAD__' => __ROOT__.'/upload',//上传文件根目录
+				'__STARTIMG__' => '/start',//启动界面图片上传目录
 		),
 		//配置默认模块
 		'MODULE_ALLOW_LIST' => array ('Admin' , 'Home' , 'Inter'),

@@ -170,7 +170,7 @@ class InterfaceManagmentController extends CommonController{
 			$data ['SORT'] = I( 'sort' );
 			$data['DISCRIPTION'] = $this -> trimAndHtmlSpecialChars(I('discription'));
 			$data['REMARK'] = $this -> trimAndHtmlSpecialChars(I('remark'));
-			$data ['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$data ['UPDATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 			if ($this -> intModel -> save($data)) {
 				$this->success ( "修改成功", __ROOT__."/".CONTROLLER_NAME."/viewList" . "/m_id/" . I ( "m_id" ) . "/p_id/" . I ( "p_id" ), 1 );
 			}
@@ -211,8 +211,8 @@ class InterfaceManagmentController extends CommonController{
 			
 			
 			$data ['STATE'] = "00A";
-			$data ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
-			$data ['UPDATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+			$data ['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
+			$data ['UPDATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 			
 			if ($this -> intModel -> add($data)) {
 				$this->success ( "添加成功", __ROOT__."/".CONTROLLER_NAME."/viewList" . "/m_id/" . I ( "m_id" ) . "/p_id/" . I ( "p_id" ), 1 );

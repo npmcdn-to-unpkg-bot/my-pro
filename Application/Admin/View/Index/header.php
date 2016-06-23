@@ -97,7 +97,7 @@ var urlHead="__ROOT__/{$Think.CONTROLLER_NAME}/";
 			</ul>
 			</li>
 			<else/>
-			<li><a href="{$menuItem.uri}/m_id/{$menuItem.id}/p_id/{$menuItem.id}"><i class="fa "></i> <span>{$menuItem.menu_name}</span></a> </li>
+			<li><a href="{$menuItem.uri}/m_id/{$menuItem.id}/p_id/{$menuItem.id}"><i class="fa {$menuItem['menu_icon']}""></i> <span>{$menuItem.menu_name}</span></a> </li>
 		</if>
 	</volist>
 	</ul>

@@ -68,7 +68,7 @@ else {
 				$data ['ROLE_NAME'] = I ( 'ROLE_NAME' );
 				$data ['ROLE_TYPE'] = I ( 'ROLE_TYPE' );
 				
-				$data ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+				$data ['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 				$data ['STATE'] = '00A';
 				
 				if ($this->model->add ( $data )) {
@@ -281,7 +281,7 @@ else if (null != I ( 'post.id' ) || "" != I ( 'post.id' )) {
 						$data ['ROLE_ID'] = I ( 'role_id' );
 						$data ['RES_ID'] = $item;
 						$data ['AUTH_RES_TYPE'] = "00A";
-						$data ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+						$data ['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 						if (false === $authModel->add ( $data ))
 							throw new Exception ( "授权失败" );
 					}

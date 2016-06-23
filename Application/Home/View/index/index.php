@@ -9,7 +9,7 @@
 </head>
 <body>
 <a onclick="login();">testtest</a>
-<?php dump(I(''));?>
+aaaa
 </body>
 <script type="text/javascript">
 // $(document).ready(function(){
@@ -17,7 +17,10 @@
 // 	alert(window.icityLogin);
 // })
 function icityJsReady(){
-	window.icityIsCollectBussiness('ff808081473a1a4401474358942e6936' , '13399461630' , 'BFB81FEFFE66494782EE3B293D138CFF');
+	alert('1');
+// 	icityTaskComplate('620028');
+	alert('2');
+// 	window.icityIsCollectBussiness('ff808081473a1a4401474358942e6936' , '13399461630' , 'BFB81FEFFE66494782EE3B293D138CFF');
 // 	window.icityCollectBusiness('ff808081473a1a4401474358942e6936' , '13399461630' , 'BFB81FEFFE66494782EE3B293D138CFF');
 }
 function login(){

@@ -67,7 +67,7 @@ class IndexController extends CommonController {
 				session ( 'adminType', $result [0] ['admin_type'] );
 				$this->success ( "登录成功" , "index" , 2 );
 				$data['ID'] = $result [0] ['id'];
-				$data['LAST_LOGIN'] = date ( 'Y-m-d h:i:s', time () );
+				$data['LAST_LOGIN'] = date ( 'Y-m-d H:i:s', time () );
 				$adminModel -> save($data);
 			}
 			

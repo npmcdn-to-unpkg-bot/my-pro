@@ -79,14 +79,14 @@ class AdminsController extends CommonController {
 				$data ['ADMIN_TYPE'] = I( 'ADMIN_TYPE' );
 				$data ['SEX'] = I( 'SEX' );
 				
-				$data ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
-				$data ['LAST_LOGTIN'] = date ( 'Y-m-d h:i:s', time () );
+				$data ['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
+				$data ['LAST_LOGTIN'] = date ( 'Y-m-d H:i:s', time () );
 				$data['STATE'] = '00A';
 				
 				$gdata['ID'] = UUID::getUUID();
 				$gdata['ADMIN_ID'] = $data['ID'];
 				$gdata['ROLE_ID'] = ("NULL" == I('ROLE_ID'))?NULL:I('ROLE_ID');
-				$gdata ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+				$gdata ['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 				
 				if ($this -> model->add ( $data ) && $gModel -> add($gdata)) {
 					$this->success ( "添加成功", __ROOT__."/".CONTROLLER_NAME."/show" . "/m_id/" . I ( "m_id" ) . "/p_id/" . I ( "p_id" ), 1 );
@@ -151,7 +151,7 @@ class AdminsController extends CommonController {
 						$gData['ID'] = UUID::getUUID();
 						$gData['ADMIN_ID'] = I('id');
 						$gData['ROLE_ID'] = I("ROLE_ID");
-						$gData ['CREATE_TIME'] = date ( 'Y-m-d h:i:s', time () );
+						$gData ['CREATE_TIME'] = date ( 'Y-m-d H:i:s', time () );
 						if (NULL === $gModel -> add($gData)) 
 							throw new Exception("添加角色信息失败");
 					}
